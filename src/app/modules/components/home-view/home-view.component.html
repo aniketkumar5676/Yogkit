@@ -1,0 +1,51 @@
+<section id="carousel-section">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5"
+                aria-label="Slide 6"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000" (click)="navigate('corporate-yoga')">
+                <img src="/assets/image/Banner4.jpg" class="d-block w-100" alt="Slide 1" />
+            </div>
+            <div class="carousel-item" id="corosel-yoga" data-bs-interval="2000" data-bs-toggle="modal" data-bs-target="#yogacampModal">
+                <img src="/assets/image/Banner5.jpg" class="d-block w-100" alt="Slide 2" />
+            </div>
+            <div class="carousel-item" (click)="navigate('home-yoga')">
+                <img src="/assets/image/Banner6.jpg" class="d-block w-100" alt="Slide 3" />
+            </div>
+            <div class="carousel-item" data-bs-interval="2000" (click)="navigate('online-yoga')">
+                <img src="/assets/image/Banner7.jpg" class="d-block w-100" alt="Slide 4" />
+            </div>
+            <div class="carousel-item" data-bs-interval="2000" (click)="navigate('threapy-yoga')">
+                <img src="/assets/image/Banner8.jpg" class="d-block w-100" alt="Slide 5" />
+            </div>
+            <div class="carousel-item" (click)="navigate('meditation')">
+                <img src="/assets/image/Banner9.jpg" class="d-block w-100" alt="Slide 6" />
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<app-home-view-service></app-home-view-service>
+
+
+

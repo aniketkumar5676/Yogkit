@@ -1,0 +1,238 @@
+/*--------------------------------------------------------------
+## Page Header
+--------------------------------------------------------------*/
+.page-header {
+    width: 100%;
+    min-height: 350px;
+    color: #43baff;
+    font-weight: 500;
+  background: #ffffff center center no-repeat;
+    background-size: cover;
+  }
+  .page-header .page-title {
+    color: #121212;
+    margin-bottom: 0;
+    flex: 1;
+    padding: 10px 20px 10px 0;
+  }
+  .page-header .breadcrumbs {
+    margin-bottom: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+  .page-header .breadcrumbs li {
+    display: inline-block;
+    color: #000000;
+  }
+  .page-header .breadcrumbs li:before {
+    content: "";
+    font-family: "FontAwesome";
+    font-size: 7px;
+    color: #43baff;
+    margin: -3px 8px 0;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .page-header .breadcrumbs li:first-child:before {
+    display: none;
+  }
+  .page-header .breadcrumbs li a {
+    color: #040404;
+  }
+  .page-header .breadcrumbs li a:hover {
+    color: #101010;
+  }
+  
+  @media (max-width: 992px) {
+    .page-header .inner {
+      display: block;
+    }
+    .page-header {
+        margin-top: 50px;
+      }
+    .page-header .page-title{
+       padding: 0px;
+    }    
+  }
+  @media (max-width: 767px) {
+    .page-header .container {
+      width: 100%;
+    }
+    .page-header .page-title {
+      font-size: 25px;
+    }
+    .page-header .breadcrumbs {
+      font-size: 12px;
+    }
+    .page-header {
+        margin-top: 50px;
+      }
+  }
+  @media (max-width: 600px) {
+    .page-header {
+      margin-top: 50px;
+      min-height: 200px;
+      padding: 40px 0;
+    }
+    .page-header .page-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+
+  .flex-middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .none-style {
+    list-style: none;
+    padding-left: 0;
+  }
+  .breadcrumbs{
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important; 
+  }
+
+  .page-header {
+    background-image: url("/assets/image/demoheader.jpg");
+}
+
+.mt-20{
+    margin-top: 20px;
+}
+
+.text-line{
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000aa;
+    text-align: center;
+}
+
+.misc-box {
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #1a1a1a;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.misc-box-black{
+  padding-left: 50px;
+  padding-right: 50px;
+  color: #0c0c0c;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ot-counter span.num {
+    padding-left: 20px;
+}
+
+.ot-counter span {
+    font-size: 48px;
+    line-height: 1;
+}
+.misc-box h5 {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.ot-counter {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    color: #1b1d21;
+    display: inline-block;
+    text-align: left;
+}
+.misc-box-bg1 {
+    background-image: url('/assets/image/demoheader.jpg');
+}
+
+.fullstackbg1 {
+    background-image: url('/assets/image/course_bg.jpg');
+  }
+
+  .misc-box h5 {
+    color: #101010;
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 5px;
+}
+.misc-box .ot-counter {
+    margin: 0 0 0 -20px;
+    padding: 45px 0 14px 0;
+    color: #000000;
+}
+.misc-box p {
+    margin-bottom: 0;
+    padding-bottom: 45px;
+}
+.space-40 {
+    height: 40px;
+    width: 100%;
+}
+.space-20 {
+margin-top: 50px;
+}
+.yoga-btn{
+    background: #f5a623;
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+.main-heading{
+    color: #101010;
+    line-height: 30px;
+    margin-bottom: 5px;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 28px;
+    font-weight: bold;
+}
+.sub{
+    font-weight: bold;
+    margin-right:20px ;
+}
+.pad-30{
+padding: 30px;
+}
+.space-5{
+margin-top: 10px;
+}
+.dis{
+    color: #ac1414;
+    line-height: 30px;
+    margin-bottom: 5px;
+    text-decoration: underline;
+    font-family: "Montserrat", sans-serif !important;
+}
+.divider{
+    margin: 20px 30px 20px 30px;
+    width: auto;
+    height: 5px;
+    border-style: double;
+    opacity: 0.4;
+    border-color: #037b63;
+}
+.align{
+  padding-top: 8px;
+  text-align: center;
+}
+.yoga-btn:disabled{
+  background: #f5a52349;
+  color: white;
+  border: none;
+  padding: 10px 40px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}

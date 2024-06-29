@@ -1,0 +1,40 @@
+.row1{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+
+@media (max-width:990px) {
+
+   .row1{
+        flex-wrap: wrap;
+    }
+}
+
+.yoga-btn{
+    background: #f5a623;
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+  }
+
+  .row3{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  img:hover {
+    transform: scale(1.1); 
+  }
+  img{
+    transition: transform 0.3s ease-in-out;
+  }
