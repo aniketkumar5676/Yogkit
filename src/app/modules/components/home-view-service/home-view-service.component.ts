@@ -19,6 +19,7 @@ export class HomeViewServiceComponent implements OnInit{
     this.route.navigate([arg0],{skipLocationChange:environment.skipURI})
     }
     title:any='Book Yoga Camp';
+    title2:any='Book Yoga Session';
     targetDate = new Date('2024-06-22T00:00:00');
     currentDate = new Date();
     public contactForm!: any;
