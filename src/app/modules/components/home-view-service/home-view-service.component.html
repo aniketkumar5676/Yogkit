@@ -417,3 +417,142 @@
       </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="yogaOfferHome" tabindex="-1" aria-labelledby="yogaOfferLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="yogaOfferLabel2">{{title2}}</h1>
+          <button type="button" id="close-modal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="row g-3" [formGroup]="bookingForm">
+                <div class="col-md-12">
+                    <input type="text" class="form-control" formControlName="name" id="name" placeholder="Name" required>
+                </div>
+                <div class="col-4">
+                    <select class="form-select" formControlName="isd" aria-label="multiple select example">
+                        <option value="+91" selected>+91</option>
+                        <option value="+1">+1</option>
+                        <option value="+44">+44</option>
+                        <option value="+61">+61</option>
+                        <option value="+81">+81</option>
+                        <option value="+49">+49</option>
+                        <option value="+86">+86</option>
+                        <option value="+33">+33</option>
+                        <option value="+39">+39</option>
+                        <option value="+7">+7</option>
+                        <option value="+34">+34</option>
+                        <option value="+55">+55</option>
+                        <option value="+27">+27</option>
+                        <option value="+82">+82</option>
+                        <option value="+46">+46</option>
+                        <option value="+41">+41</option>
+                        <option value="+31">+31</option>
+                        <option value="+32">+32</option>
+                        <option value="+47">+47</option>
+                        <option value="+48">+48</option>
+                        <option value="+351">+351</option>
+                        <option value="+20">+20</option>
+                        <option value="+62">+62</option>
+                        <option value="+92">+92</option>
+                     </select>
+                </div>
+                <div class="col-8">
+                  <input type="number" class="form-control" formControlName="phoneNumber" id="inputPhone" placeholder="Whatsapp Phone Number" required>
+                </div>
+                <div class="col-md-12">
+                  <input type="email" class="form-control" formControlName="email" id="inputEmail4" placeholder="Email Address" >
+                </div>
+                <div class="col-12">
+                  <input type="text" class="form-control" formControlName="add1" id="inputAddress" placeholder="Address line 1" >
+                </div>
+                <div class="col-12">
+                  <input type="text" class="form-control" formControlName="add2" id="inputAddress2" placeholder="Address line 2" >
+                </div>
+                <div class="col-12">
+                    <input type="text" disabled class="form-control" [value]="'Home Personal Yoga 2025 Offer'"  id="homeYogaOffers" required >
+                </div>
+                <div class="col-12">
+                    <textarea  type="text" class="form-control" formControlName="message" id="message" style="height: 100px" placeholder="Write your message" ></textarea>
+                </div>
+
+                <div class="col-12">
+                  <button [disabled]="!bookingForm.valid" type="submit" (click)="submitYogaCamp()" class="yoga-btn">Submit</button>
+                </div>
+              </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="yogaOfferOnline" tabindex="-1" aria-labelledby="yogaOfferLabel3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="yogaOfferLabel3">{{title2}}</h1>
+          <button type="button" id="close-modal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="row g-3" [formGroup]="bookingForm">
+                <div class="col-md-12">
+                    <input type="text" class="form-control" formControlName="name" id="name" placeholder="Name" required>
+                </div>
+                <div class="col-4">
+                    <select class="form-select" formControlName="isd" aria-label="multiple select example">
+                        <option value="+91" selected>+91</option>
+                        <option value="+1">+1</option>
+                        <option value="+44">+44</option>
+                        <option value="+61">+61</option>
+                        <option value="+81">+81</option>
+                        <option value="+49">+49</option>
+                        <option value="+86">+86</option>
+                        <option value="+33">+33</option>
+                        <option value="+39">+39</option>
+                        <option value="+7">+7</option>
+                        <option value="+34">+34</option>
+                        <option value="+55">+55</option>
+                        <option value="+27">+27</option>
+                        <option value="+82">+82</option>
+                        <option value="+46">+46</option>
+                        <option value="+41">+41</option>
+                        <option value="+31">+31</option>
+                        <option value="+32">+32</option>
+                        <option value="+47">+47</option>
+                        <option value="+48">+48</option>
+                        <option value="+351">+351</option>
+                        <option value="+20">+20</option>
+                        <option value="+62">+62</option>
+                        <option value="+92">+92</option>
+                     </select>
+                </div>
+                <div class="col-8">
+                  <input type="number" class="form-control" formControlName="phoneNumber" id="inputPhone" placeholder="Whatsapp Phone Number" required>
+                </div>
+                <div class="col-md-12">
+                  <input type="email" class="form-control" formControlName="email" id="inputEmail4" placeholder="Email Address" >
+                </div>
+                <div class="col-12">
+                  <input type="text" class="form-control" formControlName="add1" id="inputAddress" placeholder="Address line 1" >
+                </div>
+                <div class="col-12">
+                  <input type="text" class="form-control" formControlName="add2" id="inputAddress2" placeholder="Address line 2" >
+                </div>
+                <div class="col-12">
+                    <input type="text" disabled class="form-control" [value]="'Online Personal Yoga 2025 Offer'"  id="OnlineYogaOffers" required >
+                </div>
+                <div class="col-12">
+                    <textarea  type="text" class="form-control" formControlName="message" id="message" style="height: 100px" placeholder="Write your message" ></textarea>
+                </div>
+
+                <div class="col-12">
+                  <button [disabled]="!bookingForm.valid" type="submit" (click)="submitYogaCamp()" class="yoga-btn">Submit</button>
+                </div>
+              </form>
+        </div>
+      </div>
+    </div>
+</div>
+
