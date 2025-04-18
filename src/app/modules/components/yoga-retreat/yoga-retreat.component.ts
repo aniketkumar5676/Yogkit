@@ -73,11 +73,11 @@ export class YogaRetreatComponent implements OnInit {
     {
       day: 2,
       events: [
-        'Early Brahmuhurt Meditation',
-        'Temple Visit',
-        'Morning Yoga with Sunrise',
+        'Meditation at Brahma Muhurta',
+        'Sunrise Yoga Session',
         'Natural Body Detox',
         'Basti (Shatkarma)',
+        'Deep Relaxation with Yoga Nidra',
         'Ganga Aarti'
       ]
     },
@@ -86,7 +86,6 @@ export class YogaRetreatComponent implements OnInit {
       events: [
         'Music Meditation',
         'Pranayama',
-        'Yoga Nidra',
         'Color Therapy',
         'Yoga Dance',
         'Story telling',
