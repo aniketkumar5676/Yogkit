@@ -2,32 +2,37 @@
     <div class="hero__overlay">
       <h1>A Natural Detox Experience in Rishikesh</h1>
       <p>Recharge Your Soul Amidst the Himalayas</p>
-      <button type="button"(click)="updateForm('Yoga Retreat')" class="btn" data-bs-toggle="modal" data-bs-target="#yogaRetreatModal" >JOIN US</button>
+      <button type="button"(click)="updateForm('Yoga Retreat')" class="btn" data-bs-toggle="modal" data-bs-target="#yogaRetreatModal" >Start Your Detox Journey</button>
     </div>
   </div>
 
   <section class="dates-section">
     <h2>Dates</h2>
-    <div class="coming-soon">Coming Soon</div>
+    <div class="coming-soon">1st May - 3rd May 2025</div>
   </section>
   
-  <section class="about">
-    <h2>Retreat Highlights</h2>
-    <p class="about__desc">
-      Escape the chaos of daily life and reconnect with your true self through
-      yoga, meditation, and mindfulness.
-    </p>
-  
-    <div class="features">
-      <div class="feature" *ngFor="let f of features">{{ f }}</div>
+  <section class="programmes">
+    <h2>Our Signature Programmes</h2>
+    <div class="grid">
+      <div class="card" *ngFor="let p of programmes">
+        <img [src]="p.image" [alt]="p.title">
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.description }}</p>
+      </div>
     </div>
   </section>
   
   <section class="schedule">
-    <h2>Daily Schedule</h2>
-    <ul class="schedule__list">
-      <li *ngFor="let s of schedule">{{ s }}</li>
-    </ul>
+    <h2>Retreat Schedule</h2>
+    <div class="grid-schedule">
+      <div class="schedule-card" *ngFor="let d of schedule">
+        <div class="day-circle">{{ d.day }}</div>
+        <h3>Day {{ d.day }}</h3>
+        <ul>
+          <li *ngFor="let e of d.events">{{ e }}</li>
+        </ul>
+      </div>
+    </div>
   </section>
   
   <!-- <section class="pricing">
@@ -38,7 +43,7 @@
   </section> -->
   
   <div class="cta">
-    <button type="button"(click)="updateForm('Yoga Retreat')" class="btn" data-bs-toggle="modal" data-bs-target="#yogaRetreatModal" >Reserve Your Spot</button>
+    <button type="button"(click)="updateForm('Yoga Retreat')" class="btn" data-bs-toggle="modal" data-bs-target="#yogaRetreatModal" >Start Your Detox Journey</button>
   </div>
 
   <div class="modal fade" id="yogaRetreatModal" tabindex="-1" aria-labelledby="yogaRetreatModalLabel" aria-hidden="true">

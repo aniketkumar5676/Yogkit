@@ -4,6 +4,19 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { ToastService } from 'angular-toastify';
 
+
+interface Programme {
+  title: string;
+  image: string;
+  description: string;
+}
+
+interface DaySchedule {
+  day: number;
+  events: string[];
+}
+
+
 @Component({
   selector: 'app-yoga-retreat',
   styleUrls: ['./yoga-retreat.component.scss'],
@@ -13,29 +26,70 @@ import { ToastService } from 'angular-toastify';
 
 
 
-export class YogaRetreatComponent {
+
+export class YogaRetreatComponent implements OnInit {
 
   priceINR = 45000
 
-  features = [
-    'Daily Yoga Sessions - Guided Hatha, Vinyasa & Yin',
-    'Meditation & Breathwork - Mindful Mornings & Evenings',
-    'Nutritious Meals - Healthy Vegetarian Cuisine',
-    'Nature Immersion - Hikes, River Walks, Forest Meditation'
-  ];
-
-  schedule = [
-    '6:30 AM – Sunrise Meditation',
-    '7:30 AM – Morning Yoga Flow',
-    '9:00 AM – Breakfast',
-    '10:00 AM – Workshop / Nature Walk',
-    '1:00 PM – Lunch & Rest',
-    '4:00 PM – Evening Reflection / Sound Bath',
-    '5:30 AM – Sunday Meditation Time',
-    '7:00 AM – Afternoon Free'
-  ];
+  yogaType:string=''
 
   public bookingForm: FormGroup;
+
+  programmes: Programme[] = [
+    {
+      title: 'Color Therapy',
+      image: 'assets/image/color-therapy.jpg',
+      description: 'Balance body, mind & spirit using the vibrations of color.'
+    },
+    {
+      title: 'Shatkarma',
+      image: 'assets/image/shatkarma.jpg',
+      description: 'Six yogic detox techniques to cleanse and energize.'
+    },
+    {
+      title: 'Acupressure',
+      image: 'assets/image/acupressure.jpg',
+      description: 'Gentle point‑pressing to release stress and boost digestion.'
+    },
+    {
+      title: 'Meditation',
+      image: 'assets/image/meditation.jpg',
+      description: 'Deep‑calm practices for clarity, balance and inner peace.'
+    }
+  ];
+
+  schedule: DaySchedule[] = [
+    {
+      day: 1,
+      events: [
+        'Hawan & Introduction',
+        'Mantra Chanting',
+        'Yoga Session',
+        'Rangoli & Tratak',
+        'Meditation'
+      ]
+    },
+    {
+      day: 2,
+      events: [
+        'Early Brahmuhurt Meditation',
+        'Temple Visit & Ganga Aarti',
+        'Sunrise Yoga',
+        'Natural Body Detox',
+        'Basti (Shatkarma)'
+      ]
+    },
+    {
+      day: 3,
+      events: [
+        'Music Meditation',
+        'Pranayama & Yoga Nidra',
+        'Color Therapy',
+        'Yoga Dance',
+        'Closing Ceremony'
+      ]
+    }
+  ];
 
   constructor(private router: Router, private _toastService: ToastService, private fb: FormBuilder) {
     this.bookingForm = this.fb.group({
@@ -57,7 +111,7 @@ export class YogaRetreatComponent {
     window.scrollTo(0, 0);
   }
 
-  yogaType:string=''
+
 
   updateForm(type:string){
    this.yogaType=type;
