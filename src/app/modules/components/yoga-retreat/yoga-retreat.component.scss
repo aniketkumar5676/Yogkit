@@ -1,0 +1,259 @@
+
+  :host {
+    display: block;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #fcf9f3; // Set global background
+  }
+  
+  .hero {
+    background-image: url('/assets/image/rishikesh-hero-2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; // ✅ Needed for ::before to work properly
+  
+    @media (max-width: 768px) {
+      height: 60vh;
+    }
+  
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+     // background-color: rgba(0, 0, 0, 0.4); // ✅ Use translucent black instead
+      z-index: 1;
+    }
+  
+    &__overlay {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+     // background: rgba(0, 0, 0, 0.4); // ✅ Semi-transparent background for better readability
+      padding: 2rem;
+      border-radius: 10px;
+      color: white;
+      max-width: 600px;
+      margin: 0 1rem;
+  
+      h1 {
+        color: #fff;
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin: 0;
+  
+        .highlight {
+          color: #d3e4ff;
+        }
+  
+        @media (max-width: 768px) {
+          font-size: 1.75rem;
+        }
+      }
+  
+      p {
+        margin: 1rem 0;
+      }
+  
+      .btn {
+        background: #4d7c0f;
+        color: white;
+        padding: 0.75rem 2rem;
+        border: none;
+        border-radius: 9999px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+  
+        &:hover {
+          background: #3f6212;
+        }
+      }
+    }
+  }
+  
+  .about,
+  .schedule,
+  .pricing {
+    padding: 3rem 1rem;
+    text-align: center;
+  
+    h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #0f3d3e;
+        margin-bottom: 0.5rem;
+        border-bottom: 2px solid #d3b6a3;
+        display: inline-block;
+        padding-bottom: 0.25rem;
+      }
+  
+    .about__desc {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.5rem;
+      color: #1c3c35;
+      margin-top: 1.5rem;
+      font-weight: 400;
+    }
+  }
+  
+  .features {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 2rem;
+  
+    .feature {
+      background: #f0fdf4;
+      padding: 1.5rem;
+      border-radius: 12px;
+      font-size: 1rem;
+    }
+  }
+  
+  .schedule__list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  
+    li {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+  }
+  
+  .price {
+    color: #15803d;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+  }
+  
+  .note {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+  
+    .btn {
+      padding: 0.75rem 2rem;
+    }
+  }
+  
+  .btn {
+    background: #4d7c0f;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 9999px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  
+    &:hover {
+      background: #3f6212;
+    }
+  }
+
+  .modal-header {
+    border-bottom: none;
+    background-image: url("/assets/image/exp.jpg");
+    background-position-y: 46%;
+    background-position-x: -1%;
+    background-size: 600px 180px;
+  }
+
+  .yoga-btn{
+    background: #f5a623;
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+  }
+  .yoga-btn:disabled{
+    background: #f5a52349;
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+  }
+
+  .dates-section {
+    background: #fcf9f3; // soft beige/cream for consistency
+    text-align: center;
+    padding: 4rem 2rem;
+    width: 100%;
+    margin: 0;
+  
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #0f3d3e;
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid #d3b6a3;
+      display: inline-block;
+      padding-bottom: 0.25rem;
+    }
+  
+    .coming-soon {
+      font-size: 1.5rem;
+      color: #1c3c35;
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+  }
+  
+  
+  @media (max-width: 768px) {
+    .hero {
+      height: 80vh;
+  
+      &__overlay h1 {
+        font-size: clamp(1.4rem, 6vw, 2rem);
+      }
+    }
+  
+    .cta {
+      flex-direction: column;
+      align-items: center;
+  
+      .btn {
+        width: 90%;
+        max-width: 300px;
+      }
+    }
+  
+    .features {
+      grid-template-columns: 1fr;
+    }
+  
+    .about,
+    .schedule,
+    .pricing {
+      padding: 2rem 1rem;
+    }
+  }
+
+  
+  
+  
