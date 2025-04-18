@@ -284,7 +284,10 @@
       border-radius: 8px;
       padding: 1.5rem;
       box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform .2s;
       text-align: left;
+
+      &:hover { transform: translateY(-10px); }
   
       .day-circle {
         width: 50px;
