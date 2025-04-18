@@ -10,42 +10,46 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active desktop"  (click)="navigate('')" aria-current="page" >Home</a>
-            <a class="nav-link active mobile"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" (click)="navigate('')" aria-current="page" >Home</a>
+            <a class="nav-link active desktop"  routerLink="" aria-current="page" >Home</a>
+            <a class="nav-link active mobile"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="" aria-current="page" >Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Yoga Session
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item desktop" (click)="navigate('home-yoga')">Home Yoga </a></li>
-              <li><a class="dropdown-item mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" (click)="navigate('home-yoga')">Home Yoga </a></li>
+              <li><a class="dropdown-item desktop" routerLink="home-yoga">Home Yoga </a></li>
+              <li><a class="dropdown-item mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="home-yoga">Home Yoga </a></li>
 
-              <li><a class="dropdown-item desktop" (click)="navigate('corporate-yoga')">Corporate Yoga </a></li>
-              <li><a class="dropdown-item mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" (click)="navigate('corporate-yoga')">Corporate Yoga </a></li>
+              <li><a class="dropdown-item desktop" routerLink="corporate-yoga">Corporate Yoga </a></li>
+              <li><a class="dropdown-item mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="corporate-yoga">Corporate Yoga </a></li>
 
-              <li><a class="dropdown-item desktop" (click)="navigate('online-yoga')">Online Yoga </a></li>
-              <li><a class="dropdown-item mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"(click)="navigate('online-yoga')">Online Yoga </a></li>
+              <li><a class="dropdown-item desktop" routerLink="online-yoga">Online Yoga </a></li>
+              <li><a class="dropdown-item mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="online-yoga">Online Yoga </a></li>
                             
-              <li><a class="dropdown-item desktop" (click)="navigate('threapy-yoga')">Yoga Therapy </a></li>
-              <li><a class="dropdown-item mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" (click)="navigate('threapy-yoga')">Yoga Therapy </a></li>
+              <li><a class="dropdown-item desktop" routerLink="threapy-yoga">Yoga Therapy </a></li>
+              <li><a class="dropdown-item mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="threapy-yoga">Yoga Therapy </a></li>
 
-              <li><a class="dropdown-item desktop" (click)="navigate('meditation')">Meditation </a></li>
-              <li><a class="dropdown-item mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" (click)="navigate('meditation')">Meditation </a></li>
+              <li><a class="dropdown-item desktop" routerLink="meditation">Meditation </a></li>
+              <li><a class="dropdown-item mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="meditation">Meditation </a></li>
               <!-- <li><a class="dropdown-item"  (click)="navigate('advance-yoga')">Advance Yoga </a></li>--> 
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link desktop" (click)="navigate('mentors')">Mentors</a>
-            <a class="nav-link mobile"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" (click)="navigate('mentors')">Mentors</a>
+            <a class="nav-link desktop" routerLink="mentors">Mentors</a>
+            <a class="nav-link mobile"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="mentors">Mentors</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link desktop" (click)="navigate('about')">About</a>
-            <a class="nav-link mobile"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" (click)="navigate('about')">About</a>
+            <a class="nav-link desktop" routerLink="/yogaretreat/rishiskesh-retreat">Yoga Retreats</a>
+            <a class="nav-link mobile"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="/yogaretreat/rishiskesh-retreat">Mentors</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link desktop"  (click)="navigate('contact')">Contact</a>
-            <a class="nav-link mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" (click)="navigate('contact')">Contact</a>
+            <a class="nav-link desktop" routerLink="about">About</a>
+            <a class="nav-link mobile"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link desktop"  routerLink="contact">Contact</a>
+            <a class="nav-link mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="contact">Contact</a>
           </li>
 
         </ul>

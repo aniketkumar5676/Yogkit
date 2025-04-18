@@ -10,6 +10,7 @@ import { ThreapyYogaComponent } from './modules/components/threapy-yoga/threapy-
 import { AdvanceComponent } from './modules/components/advance-yoga/advance.component';
 import { MeditationComponent } from './modules/components/meditation/meditation.component';
 import { MentorsComponent } from './modules/components/mentors/mentors.component';
+import { YogaRetreatComponent } from './modules/components/yoga-retreat/yoga-retreat.component';
 
 const routes: Routes = [{ path: '', component: HomeViewComponent },
                         { path: 'contact', component: ContactComponent},
@@ -20,7 +21,8 @@ const routes: Routes = [{ path: '', component: HomeViewComponent },
                         { path: 'advance-yoga', component: AdvanceComponent},
                         { path: 'meditation', component: MeditationComponent},
                         { path: 'mentors', component: MentorsComponent},
-                        { path: 'about', component: AboutComponent}];
+                        { path: 'about', component: AboutComponent},
+                        { path: 'yogaretreat/:retreatName', component: YogaRetreatComponent}];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

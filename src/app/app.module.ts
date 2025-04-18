@@ -21,6 +21,7 @@ import { AdvanceComponent } from './modules/components/advance-yoga/advance.comp
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SliderMenterComponent } from './modules/components/slider-menter/slider-menter.component';
 import { MentorsComponent } from './modules/components/mentors/mentors.component';
+import { YogaRetreatComponent } from './modules/components/yoga-retreat/yoga-retreat.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MentorsComponent } from './modules/components/mentors/mentors.component
     MeditationComponent,
     AdvanceComponent,
     SliderMenterComponent,
-    MentorsComponent    
+    MentorsComponent,
+    YogaRetreatComponent   
   ],
   imports: [
     BrowserModule,
