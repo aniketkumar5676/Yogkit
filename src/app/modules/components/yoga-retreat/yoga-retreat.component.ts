@@ -100,6 +100,8 @@ export class YogaRetreatComponent implements OnInit {
       isd: ['+91'],
       phoneNumber: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
       email: ['', [Validators.required, Validators.email]],
+      add1: new FormControl(''),
+      add2: new FormControl(''),
       mode: ['Offline'],
       name: ['', Validators.required]
     });
