@@ -140,6 +140,7 @@ export class YogaRetreatComponent implements OnInit {
       companyname:  this.bookingForm.get('CompanyName')!.value,
       phone: this.bookingForm.get('isd')!.value+this.bookingForm.get('phoneNumber')!.value,
       user_email: this.bookingForm.get('email')!.value,
+      address: this.bookingForm.get('add1')!.value+this.bookingForm.get('add2')!.value,
       yogapackage: this.yogaType,
       mode: this.bookingForm.get('mode')!.value,
       sessiontype: "NA",   
