@@ -2,11 +2,11 @@
 <html lang="en" data-theme="light" >
 <head>
 
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MVWDBNN8');</script>
+    })(window,document,'script','dataLayer','GTM-MVWDBNN8');</script> -->
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17111848176"></script>
 <script>
@@ -15,7 +15,24 @@
   gtag('js', new Date());
 
   gtag('config', 'AW-17111848176');
+  gtag('config', 'AW-17111848176/kzpdCOzM39AaEPCpyN8_', {
+    'phone_conversion_number': '7217638088'
+  });
 </script>
+<script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-17111848176/IEzuCMvO0NAaEPCpyN8_',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
 
   <meta charset="utf-8">
   <title>YOGKIT</title>
