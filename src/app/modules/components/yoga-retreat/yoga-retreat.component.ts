@@ -4,6 +4,19 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { ToastService } from 'angular-toastify';
 
+
+interface Programme {
+  title: string;
+  image: string;
+  description: string;
+}
+
+interface DaySchedule {
+  day: number;
+  events: string[];
+}
+
+
 @Component({
   selector: 'app-yoga-retreat',
   styleUrls: ['./yoga-retreat.component.scss'],
@@ -13,7 +26,8 @@ import { ToastService } from 'angular-toastify';
 
 
 
-export class YogaRetreatComponent {
+
+export class YogaRetreatComponent implements OnInit {
 
   priceINR = 45000
 
@@ -25,6 +39,8 @@ export class YogaRetreatComponent {
       isd: ['+91'],
       phoneNumber: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
       email: ['', [Validators.required, Validators.email]],
+      add1: new FormControl(''),
+      add2: new FormControl(''),
       mode: ['Offline'],
       name: ['', [Validators.required, Validators.minLength(3)]]
     });
@@ -39,7 +55,7 @@ export class YogaRetreatComponent {
     window.scrollTo(0, 0);
   }
 
-  yogaType:string=''
+
 
   updateForm(type:string){
    this.yogaType=type;
@@ -65,6 +81,7 @@ export class YogaRetreatComponent {
       companyname:  this.bookingForm.get('CompanyName')!.value,
       phone: this.bookingForm.get('isd')!.value+this.bookingForm.get('phoneNumber')!.value,
       user_email: this.bookingForm.get('email')!.value,
+      address: this.bookingForm.get('add1')!.value+this.bookingForm.get('add2')!.value,
       yogapackage: this.yogaType,
       mode: this.bookingForm.get('mode')!.value,
       sessiontype: "NA",   
