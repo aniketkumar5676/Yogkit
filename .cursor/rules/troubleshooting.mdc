@@ -1,0 +1,133 @@
+# Troubleshooting Guide
+
+## Backend Issues
+
+### Memory Problems
+**Symptoms**: `FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory`
+
+**Solutions**:
+1. Use increased memory allocation: `NODE_OPTIONS="--max-old-space-size=4096" npm run dev`
+2. Use static HTML files instead of dynamic generation
+3. Avoid serving large files in-memory
+
+### Configuration Path Issues
+**Symptoms**: `Error reading active config: ENOENT: no such file or directory`
+
+**Solutions**:
+1. Check [config/config-manager.js](mdc:yogkit-admin-backend/config/config-manager.js) path configuration
+2. Ensure `configDir` is set to `__dirname` not `path.join(__dirname, 'config')`
+3. Verify default-config.json exists in config directory
+
+### Server Not Starting
+**Solutions**:
+1. Check if port 3001 is available
+2. Verify all dependencies are installed: `npm install`
+3. Check for syntax errors in [server.js](mdc:yogkit-admin-backend/server.js)
+4. Ensure .env file is properly configured
+
+## Frontend Issues
+
+### Image Clipping
+**Symptoms**: Images cut off from top or sides
+
+**Solutions**:
+1. Use `top: 50%; transform: translateY(-50%)` for vertical centering
+2. Set `overflow: visible` on parent containers
+3. Adjust image height to `100%` instead of `110%`
+4. Check responsive breakpoints in [home-view.component.scss](mdc:Yogkit/src/app/modules/components/home-view/home-view.component.scss)
+
+### Configuration Not Loading
+**Symptoms**: Default values showing instead of configured content
+
+**Solutions**:
+1. Check if backend is running on port 3001
+2. Verify API endpoint `/api/config` is accessible
+3. Check browser console for CORS errors
+4. Ensure configuration is properly saved via admin interface
+
+### Responsive Design Issues
+**Solutions**:
+1. Test on multiple screen sizes
+2. Use Bootstrap responsive classes
+3. Check media queries in component SCSS files
+4. Verify viewport meta tag in [index.html](mdc:Yogkit/src/index.html)
+
+## Configuration Issues
+
+### Admin Interface Not Working
+**Symptoms**: `http://localhost:3001/config-editor` not loading
+
+**Solutions**:
+1. Check if server is running
+2. Verify route is defined in [server.js](mdc:yogkit-admin-backend/server.js)
+3. Check browser console for errors
+4. Try alternative route `/config`
+
+### Configuration Not Saving
+**Solutions**:
+1. Check API endpoint `/api/config` with PUT method
+2. Verify JSON structure matches expected schema
+3. Check server logs for validation errors
+4. Ensure config directory has write permissions
+
+### Validation Errors
+**Solutions**:
+1. Use `/api/config/validate` endpoint to check structure
+2. Compare with [default-config.json](mdc:yogkit-admin-backend/config/default-config.json)
+3. Check for required fields and data types
+4. Use reset functionality to restore working configuration
+
+## Development Commands
+
+### Backend
+```bash
+# Start with memory allocation
+NODE_OPTIONS="--max-old-space-size=4096" npm run dev
+
+# Kill existing processes
+pkill -f "node server.js"
+
+# Check logs
+tail -f logs/combined.log
+```
+
+### Frontend
+```bash
+# Start Angular dev server
+ng serve
+
+# Build for production
+ng build --prod
+
+# Check for linting errors
+ng lint
+```
+
+## Common Fixes
+
+### Image Positioning Fix
+```scss
+.hero-img-on-bg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(1.2);
+  height: 100%;
+  overflow: visible;
+}
+```
+
+### Configuration Loading Fix
+```typescript
+// Always provide fallback values
+{{ config?.banner?.title || 'Default Title' }}
+```
+
+### Memory Issue Fix
+```bash
+# Use static files instead of dynamic generation
+# Serve config-editor.html as static file
+```
+description:
+globs:
+alwaysApply: false
+---

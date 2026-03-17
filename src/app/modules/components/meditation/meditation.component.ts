@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
-import { ToastService} from 'angular-toastify'; 
+import { ToastService } from 'angular-toastify';
 
 @Component({
   selector: 'app-meditation',
@@ -18,11 +18,11 @@ export class MeditationComponent implements OnInit {
   ngOnInit(): void {
     window.scrollTo(0,0);
     this.bookingForm = new FormGroup({
-      name: new FormControl(''),
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       isd: new FormControl('+91'),
-      phoneNumber: new FormControl(''),
-      email: new FormControl(''),
-      mode: new FormControl('Offline'),
+      phoneNumber: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      mode: new FormControl('Offline', Validators.required),
       add1: new FormControl(''),
       add2: new FormControl(''),
       message: new FormControl(''),
@@ -47,7 +47,7 @@ export class MeditationComponent implements OnInit {
       user_email: this.bookingForm.get('email').value,
       address: this.bookingForm.get('add1').value+this.bookingForm.get('add2').value,
       yogapackage: this.yogaType,
-      mode: this.bookingForm.get('mode').value,
+      mode: 'Offline/Online',
       sessiontype: "NA",
       message: this.bookingForm.get('message').value,     
       }).then(()=>{
@@ -56,7 +56,13 @@ export class MeditationComponent implements OnInit {
       }).catch((error)=>{
         document.getElementById('close-modal')?.click()
         this._toastService.error('Unable to send Message');
-      });
+      });;
+  }
 
+  scrollToPackages() {
+    const element = document.getElementById('yoga-packages');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }

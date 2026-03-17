@@ -1,99 +1,118 @@
-<div id="content" class="site-content">
-    <div class="page-header flex-middle">
-        <div class="container">
-            <div class="inner flex-middle">
-            <h1 class="page-title">Contact Us</h1>
+<section class="hero-banner-static contact-banner">
+  <div class="container-fluid">
+    <div class="row align-items-center hero-row" style="min-height: 40vh;">
+      <!-- Left: Contact Details -->
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 hero-text-col">
+        <h1 class="hero-title">Connect With Us</h1>
+        <p class="hero-subtitle">Ready to begin your yoga journey? Get in touch with Prince Yog Guru</p>
+        
+        <!-- Contact Details moved here -->
+        <div class="contact-details-banner">
+          <div class="contact-item">
+            <i class="fas fa-phone fa-lg mb-2"></i>
+            <h5>Call Us</h5>
+            <p><a class="tel-no" href="tel:+917217638088">+917217638088</a></p>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-envelope fa-lg mb-2"></i>
+            <h5>Email</h5>
+            <p><a href="mailto:yogkit1@gmail.com">yogkit1@gmail.com</a></p>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt fa-lg mb-2"></i>
+            <h5>Our Locations</h5>
+            <p>Mumbai | Delhi | Pune | Bangalore | Hyderabad | Chennai & more</p>
+          </div>
         </div>
+      </div>
+      <!-- Right: Image -->
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 hero-image-col position-relative d-flex align-items-center justify-content-center">
+        <img src="assets/image/prince_yoga_1.png" alt="Contact Prince Yog Guru" class="hero-img-on-bg" />
+      </div>
     </div>
-</div>
-
-<section class="container mb-5">
-    <div class="row">
-        <div class="col-12" style="text-align: center; margin-bottom: 35px; margin-top: 35px">
-            <h4>Have any Questions?</h4>
-        </div>
-
-        <div class="row" style="margin-top: 30px">
-            <div class="col-md-4 text-center">
-                <i class="fas fa-phone fa-2x mb-3"></i>
-                <h5>Call Us</h5>
-                <p><a class="tel-no" href="tel:+917217638088">+917217638088</a></p>
-            </div>
-            <div class="col-md-4 text-center">
-                <i class="fas fa-map-marker-alt fa-2x mb-3"></i>
-                <h5>Locate Us</h5>
-                <p>Mumbai | Delhi | Pune | South Mumbai | Thane | Navi Mumbai | Delhi-NCR | Noida | Greater Noida | Gurgaon |Faridabad | Bangalore | Hyderabad | Chennai | Kolkata | Ahmedabad </p>
-            </div>
-            <div class="col-md-4 text-center">
-                <i class="fas fa-envelope fa-2x mb-3"></i>
-                <h5>Email</h5>
-                <a href="mailto:yogkit1@gmail.com">yogkit1@gmail.com</a>
-            </div>
-        </div>
-    </div>
+  </div>
 </section>
+
+
 
 <section id="contact" class="contact mb-5">
     <div class="container-sm">
         <div class="row mt-5">
-             <div class="col-lg-12 mt-5">
-                <form id="contact-form" class="row g-3" [formGroup]="contactForm">
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" formControlName="name" id="name" placeholder="Name" required>
+              <div class="col-lg-12 mt-5">
+                <h2 class="form-title text-center mb-4">Submit your Queries</h2>
+                <form id="contact-form" [formGroup]="contactForm" (ngSubmit)="submit($event)">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" formControlName="name" placeholder="Your Full Name *" required>
+                            <div *ngIf="(contactForm.get('name')?.touched || contactForm.get('name')?.dirty) && contactForm.get('name')?.invalid" class="text-danger small mt-1">
+                                <span *ngIf="contactForm.get('name')?.errors?.['required']">Full name is required</span>
+                                <span *ngIf="contactForm.get('name')?.errors?.['minlength']">Please enter at least 3 characters</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" formControlName="email" placeholder="Email Address *" required>
+                            <div *ngIf="(contactForm.get('email')?.touched || contactForm.get('email')?.dirty) && contactForm.get('email')?.invalid" class="text-danger small mt-1">
+                                <span *ngIf="contactForm.get('email')?.errors?.['required']">Email address is required</span>
+                                <span *ngIf="contactForm.get('email')?.errors?.['email']">Please enter a valid format (e.g. name@example.com)</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-4">
-                        <select class="form-select" formControlName="isd" aria-label="multiple select example">
-                            <option value="+91" selected>+91</option>
-                            <option value="+1">+1</option>
-                            <option value="+44">+44</option>
-                            <option value="+61">+61</option>
-                            <option value="+81">+81</option>
-                            <option value="+49">+49</option>
-                            <option value="+86">+86</option>
-                            <option value="+33">+33</option>
-                            <option value="+39">+39</option>
-                            <option value="+7">+7</option>
-                            <option value="+34">+34</option>
-                            <option value="+55">+55</option>
-                            <option value="+27">+27</option>
-                            <option value="+82">+82</option>
-                            <option value="+46">+46</option>
-                            <option value="+41">+41</option>
-                            <option value="+31">+31</option>
-                            <option value="+32">+32</option>
-                            <option value="+47">+47</option>
-                            <option value="+48">+48</option>
-                            <option value="+351">+351</option>
-                            <option value="+20">+20</option>
-                            <option value="+62">+62</option>
-                            <option value="+92">+92</option>
-                         </select>
+                    <div class="row mt-3">
+                        <div class="col-4">
+                            <select class="form-select" formControlName="isd" aria-label="ISD Code">
+                                <option value="+91" selected>+91</option>
+                                <option value="+1">+1</option>
+                                <option value="+44">+44</option>
+                                <option value="+61">+61</option>
+                                <option value="+81">+81</option>
+                                <option value="+49">+49</option>
+                                <option value="+86">+86</option>
+                                <option value="+33">+33</option>
+                                <option value="+39">+39</option>
+                                <option value="+7">+7</option>
+                                <option value="+34">+34</option>
+                                <option value="+55">+55</option>
+                                <option value="+27">+27</option>
+                                <option value="+82">+82</option>
+                                <option value="+46">+46</option>
+                                <option value="+41">+41</option>
+                                <option value="+31">+31</option>
+                                <option value="+32">+32</option>
+                                <option value="+351">+351</option>
+                                <option value="+20">+20</option>
+                                <option value="+62">+62</option>
+                                <option value="+92">+92</option>
+                            </select>
+                        </div>
+                        <div class="col-8">
+                            <input type="number" class="form-control" formControlName="phoneNumber" placeholder="WhatsApp Phone Number *" required>
+                            <div *ngIf="(contactForm.get('phoneNumber')?.touched || contactForm.get('phoneNumber')?.dirty) && contactForm.get('phoneNumber')?.invalid" class="text-danger small mt-1">
+                                <span *ngIf="contactForm.get('phoneNumber')?.errors?.['required']">Phone number is required</span>
+                                <span *ngIf="contactForm.get('phoneNumber')?.errors?.['pattern']">Please enter a valid 10-digit number</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-8">
-                      <input type="number" class="form-control" formControlName="phoneNumber" id="inputPhone" placeholder="Whatsapp Phone No" required>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <textarea class="form-control" formControlName="message" style="height: 120px" placeholder="How can we help you? *" required></textarea>
+                            <div *ngIf="(contactForm.get('message')?.touched || contactForm.get('message')?.dirty) && contactForm.get('message')?.invalid" class="text-danger small mt-1">
+                                <span *ngIf="contactForm.get('message')?.errors?.['required']">Message is required</span>
+                                <span *ngIf="contactForm.get('message')?.errors?.['minlength']">Message must be at least 5 characters</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-12">
-                      <input type="email" class="form-control" formControlName="email" id="inputEmail4" placeholder="Email Address">
+                    <div class="text-center mt-4">
+                        <div *ngIf="contactForm.invalid && (contactForm.touched || contactForm.dirty)" class="text-muted small mb-2">
+                             Please fill all required fields correctly to enable the button.
+                        </div>
+                        <button [disabled]="!contactForm.valid" type="submit" class="yoga-btn border-0 py-2 px-5">Send Message</button>
                     </div>
-                    <div class="col-12">
-                      <input type="text" class="form-control" formControlName="add1" id="inputAddress" placeholder="Address line 1">
-                    </div>
-                    <div class="col-12">
-                      <input type="text" class="form-control" formControlName="add2" id="inputAddress2" placeholder="Address line 2">
-                    </div>
-
-                    <div class="col-12">
-                        <textarea  type="text" class="form-control" formControlName="message" id="message" style="height: 100px" placeholder="Write your message"></textarea>
-                    </div>
-    
-                    <div class="flex">
-                      <button id="contact-form-btn" [disabled]="!contactForm.valid" type="submit" (click)="submit($event)" class="yoga-btn">Submit</button>
-                    </div>
-                  </form>
+                </form>
 
             </div>
 
         </div>
     </div>
-</section>
 

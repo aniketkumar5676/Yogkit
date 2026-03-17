@@ -1,0 +1,1347 @@
+:root {
+  --banner-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --primary-gold: #D4AF37;
+  --deep-brown: rgb(147, 75, 19);
+}
+
+.hero-banner-carousel {
+  width: 100vw;
+  min-height: 70vh;
+  background: #fbf8f3 !important;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Glassmorphism Card Style */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  position: relative;
+}
+
+/* Float Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slowZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.carousel-item .glass-card,
+.carousel-item .hero-img-on-bg {
+  opacity: 0;
+  transform: translateY(25px);
+  will-change: transform, opacity;
+}
+
+.carousel-item.active .glass-card {
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.carousel-item.active .hero-img-on-bg {
+  animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s both;
+}
+
+.hero-banner-carousel,
+.hero-banner-static,
+.banner-content,
+.carousel-image {
+  height: 100%;
+  min-height: 55vh;
+}
+
+.hero-banner-carousel {
+  width: 100vw;
+  min-height: 60vh;
+  background: rgb(254, 248, 238) !important; // Light cream background
+  padding: 55px 0 0 0;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+// Ensure all carousel items have the same minimum height
+.carousel-item {
+  min-height: 70vh;
+  height: auto;
+}
+
+.hero-banner-static {
+  width: 100vw;
+  min-height: 60vh;
+  background: rgb(254, 248, 238) !important; // Light cream background
+  padding: 55px 0 0 0;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+.hero-row {
+  min-height: 60vh;
+  align-items: flex-start !important;
+  position: relative;
+  padding-top: 3rem;
+}
+
+.hero-text-col {
+  padding: 4rem 2rem 1rem 6rem;
+  /* Increased from 4rem to 6rem to clear the left arrow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: rgb(147, 75, 19) !important; // Rich dark brown color - override any global styles
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+/* Desktop and large screens responsive adjustments */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    text-align: center;
+  }
+
+  .hero-text-col {
+    text-align: center;
+  }
+}
+
+.hero-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: #000000; // Deep navy
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.hero-cta-btn {
+  display: inline-block;
+  background: rgb(147, 75, 19);
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  border-radius: 40px;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+
+  &::after {
+    content: "→";
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    background: rgb(147, 75, 19);
+    opacity: 0.9;
+
+    &::after {
+      transform: translate(5px, -50%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    padding: 0.9rem 1.8rem;
+    text-align: center;
+
+    &::after {
+      right: 1.5rem;
+    }
+  }
+}
+
+.hero-trusted {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.trusted-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
+  margin-right: -10px;
+}
+
+.hero-trusted span {
+  font-size: 1rem;
+  color: #3a3a3a;
+  margin-left: 1.2rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.hero-image-col {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  padding-top: 0;
+  overflow: visible;
+
+  /* Premium Glowing Background Behind Subject */
+  &::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 70%);
+    border-radius: 50%;
+    z-index: 1;
+    filter: blur(40px);
+  }
+}
+
+.hero-img-on-bg {
+  position: relative;
+  z-index: 2;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 65vh;
+  object-fit: contain;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+
+  /* INNOVATIVE BLENDING: 
+     Radial mask fades the edges of the image into the cream background, 
+     removing the 'patch' look for both transparent and rectangular images. */
+  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 95%);
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 95%);
+}
+
+/* 
+  Multiply blend mode trick: white & light-grey pixels in a JPG 
+  become invisible against the light cream banner background.
+  Darker pixels (the subject) remain fully visible.
+*/
+.blend-multiply {
+  mix-blend-mode: multiply;
+  /* Override radial mask for JPGs since they have no true alpha */
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.banner-content {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.carousel-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-left: 0;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.carousel-text h2 {
+  color: #101828;
+}
+
+.carousel-text p {
+  color: #3a3a3a;
+}
+
+.cta-btn,
+.btn-primary {
+  background: var(--accent-color);
+  color: #2E2E2E;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(168, 195, 165, 0.10);
+  transition: background 0.2s;
+  border: none;
+}
+
+.cta-btn:hover,
+.btn-primary:hover {
+  background: var(--secondary-color);
+}
+
+.carousel-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(90deg, #F9F6F1 0%, #F5F1EC 100%);
+  border-radius: 0;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 0;
+  object-fit: cover;
+  background: transparent;
+  box-shadow: 0 8px 32px 0 rgba(33, 150, 243, 0.10);
+  display: block;
+}
+
+// Carousel Banner Image Styles
+.carousel-banner-img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+}
+
+// Full-size Carousel Banner Image
+.carousel-banner-img-full {
+  width: 100%;
+  height: 60vh;
+  min-height: 60vh;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+  position: relative;
+  z-index: 1;
+  background: rgb(254, 248, 238);
+}
+
+// Desktop and larger screens - use cover for better fit
+@media (min-width: 769px) {
+  .carousel-banner-img-full {
+    height: 60vh;
+    min-height: 60vh;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+}
+
+// Carousel Controls Styling
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  background: rgba(147, 75, 19, 0.8);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  z-index: 20;
+  /* Sit above glass card (z-index: 10) */
+
+  &:hover {
+    opacity: 1;
+    background: rgba(147, 75, 19, 1);
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.carousel-control-prev {
+  left: 10px;
+  /* Moved closer to edge so it doesn't encroach on content */
+}
+
+.carousel-control-next {
+  right: 10px;
+}
+
+// Carousel Indicators Styling
+.carousel-indicators {
+  bottom: 20px;
+
+  button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(147, 75, 19, 0.5);
+    border: none;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+
+    &.active {
+      background-color: rgb(147, 75, 19);
+    }
+  }
+}
+
+.carousel-image img:hover {
+  box-shadow:
+    0 12px 36px 0 rgba(67, 206, 162, 0.18),
+    0 0 0 16px rgba(211, 241, 237, 0.9);
+  border-radius: 40px;
+}
+
+.register-link-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.btn-outline-primary {
+  color: var(--text-accent);
+  border: 2px solid var(--text-accent);
+  background: #fff;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline-primary:hover {
+  background: var(--text-accent);
+  color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .hero-banner-static {
+    width: 100vw;
+    max-width: 100vw;
+    padding: 1.5rem 0.5rem;
+    min-height: 70vh;
+    height: 70vh;
+  }
+
+  .hero-img {
+    max-width: 300px;
+    height: 180px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hero-img-on-bg {
+    transform: translateY(-50%) scale(1.3);
+    right: 18%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1399px) {
+  .hero-img-on-bg {
+    right: 12%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero-banner-carousel,
+  .hero-banner-static {
+    background: rgb(254, 248, 238) !important; // Fixed: Use same cream background
+    padding: 100px 0 60px 0;
+    min-height: 85vh;
+    margin-bottom: 0;
+    min-height: 100vh;
+    height: auto;
+    display: block;
+    overflow: visible;
+    position: relative;
+  }
+
+  // Mobile carousel items - consistent height
+  .carousel-item {
+    height: 100vh;
+    min-height: 100vh;
+  }
+
+  // Mobile carousel banner image
+  .carousel-banner-img {
+    width: 90vw;
+    max-width: 500px;
+    max-height: 50vh;
+  }
+
+  // Mobile full-size carousel banner image
+  .carousel-banner-img-full {
+    height: 100vh;
+    min-height: 100vh;
+    object-fit: cover;
+    object-position: center 30%;
+    background: rgb(254, 248, 238);
+  }
+
+  // Mobile carousel controls
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    opacity: 0.6;
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .carousel-control-prev {
+    left: 10px;
+  }
+
+  .carousel-control-next {
+    right: 10px;
+  }
+
+  // Mobile carousel indicators
+  .carousel-indicators {
+    bottom: 10px;
+
+    button {
+      width: 10px;
+      height: 10px;
+      margin: 0 3px;
+    }
+  }
+
+  .hero-img-on-bg {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    max-height: 85%;
+    right: auto;
+    bottom: auto;
+    transform: none;
+    object-fit: contain;
+  }
+
+  .hero-image-col {
+    justify-content: center;
+    height: auto;
+    min-height: 300px;
+  }
+
+  .hero-text-col {
+    padding: 2rem 1.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-row {
+    flex-direction: column !important;
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .hero-text-col {
+    padding: 2rem 1.5rem;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    order: 2;
+    z-index: 100;
+    position: relative;
+    background: transparent;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    word-wrap: break-word;
+    font-weight: 900;
+    color: rgb(147, 75, 19) !important; // Fixed: Use same brown color as desktop
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+    padding: 0 0.5rem;
+    color: #000000; // Fixed: Use same black color as desktop
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .hero-cta-btn {
+    font-size: 1.1rem;
+    padding: 1.2rem 2.8rem;
+    border-radius: 30px;
+    margin-bottom: 2rem;
+    white-space: nowrap;
+    display: inline-block;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .hero-image-col {
+    width: 100%;
+    min-height: 40vh;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0;
+    order: 1;
+  }
+
+  .hero-bg-svg {
+    width: 90vw;
+    max-width: 350px;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    position: absolute;
+    z-index: 1;
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  .hero-img-on-bg {
+    width: 95vw;
+    max-width: 450px;
+    height: auto;
+    max-height: 85%;
+    min-height: 300px;
+    margin: 0 auto;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    position: relative;
+    z-index: 5;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .schedule-section {
+    margin: 2rem auto 0 auto;
+    padding: 1.5rem 1rem;
+    max-width: 95vw;
+    border-radius: 16px;
+    box-shadow: 0 6px 32px rgba(168, 195, 165, 0.10), 0 1.5px 6px rgba(231, 215, 193, 0.08);
+    position: relative;
+    z-index: 10;
+    background: var(--card-bg);
+  }
+
+  .schedule-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .schedule-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .schedule-slots {
+    padding: 0.7rem 0.2rem;
+    border-radius: 10px;
+  }
+
+  .slot-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .slot-label {
+    font-size: 1rem;
+    padding: 0.2rem 0.8rem;
+    border-radius: 6px;
+    margin: 0.2rem 0;
+  }
+
+  .slot-times {
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: center;
+  }
+
+  .slot-column {
+    width: 100%;
+    align-items: center;
+    font-size: 1rem;
+    gap: 0.3rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+  }
+
+  .slot-column.morning::before {
+    content: '☀️  Morning Slot';
+    display: block;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background: var(--accent-color);
+    color: var(--text-main);
+    border-radius: 8px;
+    padding: 0.3rem 1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .slot-column.evening::before {
+    content: '🌙  Evening Slot';
+    display: block;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background: var(--accent-color);
+    color: var(--text-main);
+    border-radius: 8px;
+    padding: 0.3rem 1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .slot-column div {
+    width: 90vw;
+    max-width: 320px;
+    font-size: 1.1rem;
+    padding: 0.7rem 0;
+    border-radius: 12px;
+    margin: 0.2rem 0;
+    background: var(--warm-white);
+    box-shadow: 0 2px 8px rgba(168, 195, 165, 0.08);
+    text-align: center;
+    color: var(--text-main);
+    font-weight: 500;
+  }
+
+  .slot-header {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+
+  .slot-column.morning::before,
+  .slot-column.evening::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  .slot-header {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .hero-banner-carousel,
+  .hero-banner-static {
+    padding: 100px 0 0 0;
+    min-height: 100vh;
+    height: auto;
+    background: rgb(254, 248, 238) !important; // Fixed: Use same cream background
+  }
+
+  // Small mobile full-size carousel banner image
+  .carousel-banner-img-full {
+    height: 100vh;
+    min-height: 100vh;
+    object-fit: cover;
+    object-position: center 30%;
+    background: rgb(254, 248, 238);
+  }
+
+  .hero-text-col {
+    padding: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    line-height: 1.15;
+    margin-bottom: 0.8rem;
+    font-weight: 900;
+    color: rgb(147, 75, 19) !important; // Fixed: Use same brown color as desktop
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    margin-bottom: 1.2rem;
+    padding: 0;
+    color: #000000; // Fixed: Use same black color as desktop
+  }
+
+  .hero-cta-btn {
+    font-size: 1rem;
+    padding: 1rem 2.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .hero-img-on-bg {
+    width: 90vw;
+    max-width: 400px;
+    max-height: 85%;
+    min-height: 280px;
+    object-fit: contain;
+  }
+
+  .schedule-section {
+    margin: 1.5rem auto 0 auto;
+    padding: 1.2rem 0.8rem;
+    max-width: 95vw;
+    border-radius: 12px;
+  }
+
+  .schedule-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .schedule-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .slot-times {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .slot-column {
+    font-size: 1rem;
+  }
+
+  .slot-column div {
+    width: 90vw;
+    max-width: 300px;
+    font-size: 1rem;
+    padding: 0.6rem 0;
+    margin: 0.2rem 0;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+
+  .hero-banner-carousel,
+  .hero-banner-static {
+    padding: 100px 0 0 0;
+    background: rgb(254, 248, 238) !important; // Fixed: Use same cream background
+  }
+
+  // Extra small mobile full-size carousel banner image
+  .carousel-banner-img-full {
+    height: 100vh;
+    min-height: 100vh;
+    object-fit: cover;
+    object-position: center 30%;
+    background: rgb(254, 248, 238);
+  }
+
+  .hero-text-col {
+    padding: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.1;
+    margin-bottom: 0.6rem;
+    font-weight: 900;
+    color: rgb(147, 75, 19) !important; // Fixed: Use same brown color as desktop
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    color: #000000; // Fixed: Use same black color as desktop
+  }
+
+  .hero-cta-btn {
+    font-size: 0.95rem;
+    padding: 0.9rem 1.8rem;
+    white-space: nowrap;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-img-on-bg {
+    width: 92vw;
+    max-width: 350px;
+    max-height: 85%;
+    min-height: 250px;
+    object-fit: contain;
+  }
+
+  .schedule-section {
+    margin: 1rem auto 0 auto;
+    padding: 1rem 0.6rem;
+    max-width: 96vw;
+  }
+
+  .schedule-title {
+    font-size: 1.2rem;
+  }
+
+  .schedule-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .slot-column div {
+    width: 85vw;
+    max-width: 280px;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+  }
+}
+
+/* Tablet landscape and smaller desktop */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-cta-btn {
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+  }
+}
+
+/* iPad and tablet portrait */
+@media (max-width: 768px) and (min-width: 601px) {
+  .hero-banner-static {
+    min-height: 90vh;
+  }
+
+  .hero-text-col {
+    padding: 2rem 2rem 1.5rem 2rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-image-col {
+    min-height: 300px;
+  }
+
+  .hero-img-on-bg {
+    max-width: 70vw;
+    max-height: 85%;
+    object-fit: contain;
+  }
+}
+
+// Modal Styles
+.modal {
+  .modal-dialog {
+    max-width: 500px;
+  }
+
+  .modal-content {
+    background: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .modal-header {
+    border: none;
+    padding: 1.5rem 1.5rem 0.5rem;
+    background: none;
+
+    .modal-title {
+      font-family: 'Playfair Display', serif;
+      color: rgb(147, 75, 19);
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
+      width: 100%;
+    }
+
+    .btn-close {
+      position: absolute;
+      right: 1.5rem;
+      top: 1.5rem;
+      opacity: 0.6;
+      transition: all 0.3s ease;
+
+      &:hover {
+        opacity: 1;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+
+    .form-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      color: #000000;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-control,
+    .form-select {
+      height: 48px;
+      background: rgb(254, 248, 238);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      color: #000000;
+      transition: all 0.3s ease;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.4);
+      }
+
+      &:focus {
+        border-color: #000000;
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    textarea.form-control {
+      height: auto;
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .time-slots {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .form-check {
+        margin: 0;
+        padding: 0.75rem;
+        background: rgb(254, 248, 238);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+
+        &:hover {
+          border-color: #000000;
+          background: rgb(254, 248, 238);
+        }
+
+        input[type="radio"] {
+          margin: 0;
+        }
+
+        label {
+          margin: 0;
+          cursor: pointer;
+          font-weight: 500;
+          font-size: 0.9rem;
+          color: #000000;
+        }
+      }
+    }
+
+    .invalid-feedback {
+      font-size: 0.8rem;
+      color: #dc3545;
+      margin-top: 0.25rem;
+    }
+
+    .text-muted {
+      font-size: 0.8rem;
+      color: rgba(0, 0, 0, 0.6) !important;
+    }
+
+    .yoga-btn {
+      width: 100%;
+      background: #000000;
+      color: #FFFFFF;
+      border: none;
+      padding: 0.75rem;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+
+      &:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      &:disabled {
+        background: rgba(0, 0, 0, 0.5);
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .modal {
+    .modal-dialog {
+      margin: 1rem;
+    }
+
+    .modal-header {
+      padding: 1rem 1rem 0.5rem;
+
+      .modal-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    .modal-body {
+      padding: 1rem;
+    }
+  }
+}
+
+.hero-banner {
+  background-color: var(--light-bg);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/assets/image/lotus-pattern.svg') repeat;
+    opacity: 0.05;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+
+    .hero-title {
+      color: var(--primary-color);
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      color: var(--secondary-color);
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    .hero-cta-btn {
+      display: inline-block;
+      background: var(--accent-color);
+      color: white;
+      padding: 15px 35px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(232, 146, 124, 0.3);
+      }
+    }
+  }
+}
+
+.benefits-section {
+  padding: 80px 0;
+  background-color: white;
+
+  .benefit-card {
+    background-color: var(--light-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .benefit-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1.5rem;
+      color: var(--accent-color);
+    }
+
+    h3 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    p {
+      color: var(--secondary-color);
+      opacity: 0.9;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+
+  li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+
+    &::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--check-color);
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    padding: 60px 0;
+
+    .hero-content {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .hero-cta-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+      }
+    }
+  }
+}

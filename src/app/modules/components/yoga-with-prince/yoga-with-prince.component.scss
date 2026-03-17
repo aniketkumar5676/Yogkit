@@ -1,0 +1,303 @@
+// Import Font Awesome for WhatsApp icons
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+
+// Banner Section Styles (Matching website theme)
+.hero-banner-static {
+  background: rgb(254, 248, 238) !important; // Light cream background
+  color: #000000;
+  padding: 60px 0;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+
+  .hero-row {
+    min-height: 60vh;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: rgb(147, 75, 19) !important; // Brown color
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  }
+
+  .hero-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    color: #000000; // Black text
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    line-height: 1.6;
+  }
+
+  .hero-cta-btn {
+    display: inline-block;
+    background: rgb(147, 75, 19); // Brown background
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(147, 75, 19, 0.3);
+    font-family: 'Poppins', sans-serif;
+
+    &:hover {
+      background: rgb(147, 75, 19);
+      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(147, 75, 19, 0.4);
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  .hero-img-on-bg {
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+  }
+}
+
+// Schedule Section Styles (Matching website theme)
+.schedule-section {
+  background: #FFFFFF; // White background
+  padding: 80px 0;
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(147, 75, 19); // Brown color
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #000000; // Black text
+    margin-bottom: 0;
+    opacity: 0.9;
+  }
+
+  .batch-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(147, 75, 19); // Brown color
+    margin-bottom: 2rem;
+    text-align: center;
+    padding: 1rem;
+    background: rgb(254, 248, 238); // Light cream background
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+
+  .schedule-card {
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .time-badge {
+      background: rgb(147, 75, 19); // Brown background
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .session-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: rgb(147, 75, 19); // Brown color
+      margin-bottom: 0.5rem;
+    }
+
+    .session-duration {
+      color: #000000; // Black text
+      font-weight: 500;
+      margin-bottom: 1rem;
+      opacity: 0.8;
+    }
+
+    .session-description {
+      color: #000000; // Black text
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+
+    .youtube-embed {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+      iframe {
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .class-info-card {
+    background: rgb(254, 248, 238); // Light cream background
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-top: 2rem;
+    border: 1px solid rgba(0,0,0,0.05);
+
+    .info-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: rgb(147, 75, 19); // Brown color
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .info-item {
+      padding: 1rem;
+      background: #FFFFFF;
+      border-radius: 10px;
+      border-left: 4px solid rgb(147, 75, 19); // Brown border
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+      strong {
+        color: rgb(147, 75, 19); // Brown color
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      span {
+        color: #000000; // Black text
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+// WhatsApp Section Styles (Matching website theme)
+.whatsapp-section {
+  background: rgb(254, 248, 238); // Light cream background
+  color: #000000;
+  padding: 80px 0;
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: rgb(147, 75, 19); // Brown color
+  }
+
+  .section-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #000000; // Black text
+    opacity: 0.9;
+  }
+
+  .whatsapp-btn {
+    display: inline-block;
+    background: #25d366; // WhatsApp green
+    color: white;
+    padding: 15px 30px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    font-family: 'Poppins', sans-serif;
+
+    &:hover {
+      background: #128c7e; // Darker green on hover
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      color: white;
+      text-decoration: none;
+    }
+
+    i {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Responsive Design (Matching website theme)
+@media (max-width: 768px) {
+  .hero-banner-static {
+    padding: 60px 0;
+    
+    .hero-title {
+      font-size: 2.5rem;
+      color: rgb(147, 75, 19) !important; // Brown color
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: #000000; // Black text
+    }
+
+    .hero-cta-btn {
+      padding: 12px 25px;
+      font-size: 1rem;
+      background: rgb(147, 75, 19); // Brown background
+    }
+  }
+
+  .schedule-section {
+    padding: 60px 0;
+    
+    .section-title {
+      font-size: 2rem;
+      color: rgb(147, 75, 19); // Brown color
+    }
+
+    .batch-title {
+      font-size: 1.5rem;
+      color: rgb(147, 75, 19); // Brown color
+    }
+
+    .schedule-card {
+      padding: 1.5rem;
+    }
+  }
+
+  .whatsapp-section {
+    padding: 60px 0;
+    
+    .section-title {
+      font-size: 2rem;
+      color: rgb(147, 75, 19); // Brown color
+    }
+
+    .whatsapp-btn {
+      padding: 12px 25px;
+      font-size: 1rem;
+    }
+  }
+}

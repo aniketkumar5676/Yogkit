@@ -1,259 +1,297 @@
 
-  :host {
-    display: block;
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
-    line-height: 1.6;
-    background-color: #fcf9f3; // Set global background
-  }
-  
-  .hero {
-    background-image: url('/assets/image/rishikesh-hero-2.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative; // ✅ Needed for ::before to work properly
-  
-    @media (max-width: 768px) {
-      height: 60vh;
-    }
-  
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-     // background-color: rgba(0, 0, 0, 0.4); // ✅ Use translucent black instead
-      z-index: 1;
-    }
-  
-    &__overlay {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-     // background: rgba(0, 0, 0, 0.4); // ✅ Semi-transparent background for better readability
-      padding: 2rem;
-      border-radius: 10px;
-      color: white;
-      max-width: 600px;
-      margin: 0 1rem;
-  
-      h1 {
-        color: #fff;
-        font-size: 2.5rem;
-        font-weight: 600;
-        margin: 0;
-  
-        .highlight {
-          color: #d3e4ff;
-        }
-  
-        @media (max-width: 768px) {
-          font-size: 1.75rem;
-        }
-      }
-  
-      p {
-        margin: 1rem 0;
-      }
-  
-      .btn {
-        background: #4d7c0f;
-        color: white;
-        padding: 0.75rem 2rem;
-        border: none;
-        border-radius: 9999px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background 0.3s ease;
-  
-        &:hover {
-          background: #3f6212;
-        }
-      }
-    }
-  }
-  
-  .about,
-  .schedule,
-  .pricing {
-    padding: 3rem 1rem;
-    text-align: center;
-  
-    h2 {
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: #0f3d3e;
-        margin-bottom: 0.5rem;
-        border-bottom: 2px solid #d3b6a3;
-        display: inline-block;
-        padding-bottom: 0.25rem;
-      }
-  
-    .about__desc {
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      font-size: 1.5rem;
-      color: #1c3c35;
-      margin-top: 1.5rem;
-      font-weight: 400;
-    }
-  }
-  
-  .features {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    margin-top: 2rem;
-  
-    .feature {
-      background: #f0fdf4;
-      padding: 1.5rem;
-      border-radius: 12px;
-      font-size: 1rem;
-    }
-  }
-  
-  .schedule__list {
-    list-style: none;
-    padding: 0;
-    margin-top: 1rem;
-  
-    li {
-      margin: 0.5rem 0;
-      font-size: 1rem;
-    }
-  }
-  
-  .price {
-    color: #15803d;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 1rem 0;
-  }
-  
-  .note {
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
-  .cta {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
-  
-    .btn {
-      padding: 0.75rem 2rem;
-    }
-  }
-  
-  .btn {
-    background: #4d7c0f;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 9999px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  
-    &:hover {
-      background: #3f6212;
-    }
-  }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
-  .modal-header {
-    border-bottom: none;
-    background-image: url("/assets/image/exp.jpg");
-    background-position-y: 46%;
-    background-position-x: -1%;
-    background-size: 600px 180px;
-  }
+:host {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f7f3f0;
+  color: #333;
+}
 
-  .yoga-btn{
-    background: #f5a623;
-    color: white;
-    border: none;
-    padding: 10px 40px;
-    font-size: 1em;
-    cursor: pointer;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-  }
-  .yoga-btn:disabled{
-    background: #f5a52349;
-    color: white;
-    border: none;
-    padding: 10px 40px;
-    font-size: 1em;
-    cursor: pointer;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-  }
+.hero-section {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://www.yogkit.com/assets/image/rishikesh-hero-2.jpg') center/cover no-repeat;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
 
-  .dates-section {
-    background: #fcf9f3; // soft beige/cream for consistency
-    text-align: center;
-    padding: 4rem 2rem;
-    width: 100%;
-    margin: 0;
-  
-    h2 {
-      font-size: 2.2rem;
+  .hero-content {
+    max-width: 900px;
+    
+    h1 {
+      color: #ffffff !important;
+      font-size: clamp(2rem, 8vw, 4.5rem);
       font-weight: 700;
-      color: #0f3d3e;
-      margin-bottom: 0.5rem;
-      border-bottom: 2px solid #d3b6a3;
-      display: inline-block;
-      padding-bottom: 0.25rem;
+      margin-bottom: 20px;
+      line-height: 1.1;
     }
-  
-    .coming-soon {
-      font-size: 1.5rem;
-      color: #1c3c35;
-      margin-top: 1rem;
-      font-weight: 500;
+
+    p {
+      font-size: clamp(1.1rem, 3vw, 1.8rem);
+      font-weight: 400;
+      margin-bottom: 40px;
+      opacity: 0.9;
     }
   }
-  
-  
-  @media (max-width: 768px) {
-    .hero {
-      height: 80vh;
-  
-      &__overlay h1 {
-        font-size: clamp(1.4rem, 6vw, 2rem);
-      }
-    }
-  
-    .cta {
-      flex-direction: column;
-      align-items: center;
-  
-      .btn {
-        width: 90%;
-        max-width: 300px;
-      }
-    }
-  
-    .features {
-      grid-template-columns: 1fr;
-    }
-  
-    .about,
-    .schedule,
-    .pricing {
-      padding: 2rem 1rem;
+}
+
+.btn-primary-retreat {
+  background-color: #507f15;
+  color: #fff !important;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(80, 127, 21, 0.3);
+
+  &:hover {
+    background-color: #3f6411;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(80, 127, 21, 0.4);
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}
+
+.main-content-wrapper {
+  padding: 80px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h2.section-heading {
+  color: #003333;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+
+/* Dates Section */
+.section-dates {
+  margin-bottom: 80px;
+  h2 {
+    color: #003333;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .date-box {
+    font-size: 1.5rem;
+    color: #507f15;
+    font-weight: 600;
+  }
+}
+
+/* Programmes Grid */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 100px;
+}
+
+.program-card {
+  background: #fff;
+  padding: 25px 15px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.03);
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .icon-wrapper {
+    margin-bottom: 15px;
+    img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      border-radius: 50%;
     }
   }
 
-  
-  
-  
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+  }
+}
+
+/* Scroll Icon */
+.scroll-icon-wrapper {
+  margin: 60px 0;
+  .mouse {
+    width: 26px;
+    height: 42px;
+    border: 2px solid #333;
+    border-radius: 20px;
+    display: inline-block;
+    position: relative;
+    &::after {
+      content: '';
+      width: 4px;
+      height: 8px;
+      background: #333;
+      position: absolute;
+      left: 50%;
+      top: 8px;
+      margin-left: -2px;
+      border-radius: 2px;
+      animation: mouse-scroll 1.5s infinite;
+    }
+  }
+}
+
+@keyframes mouse-scroll {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0; }
+}
+
+/* Schedule Section */
+.section-schedule {
+  background-color: #f7f3f0;
+  padding: 80px 0;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.schedule-card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+  /* min-height removed for compactness */
+
+  .day-badge {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    width: 44px;
+    height: 44px;
+    background-color: #507f15;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(80, 127, 21, 0.25);
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    color: #333;
+  }
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: #fcfcfc;
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #f7f9f4;
+    border-left-color: #507f15;
+    transform: translateX(3px);
+  }
+
+  .item-icon {
+    font-size: 1.2rem;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.03));
+  }
+
+  .item-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #444;
+    line-height: 1.3;
+  }
+}
+}
+
+.cta-footer-wrap {
+  margin-top: 100px;
+  padding-top: 60px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Modal Adjustments */
+.modal-content {
+  border-radius: 15px;
+  border: none;
+  .modal-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    .modal-title { font-weight: 700; color: #333; }
+  }
+  .modal-body {
+    padding: 30px;
+    .form-control, .form-select {
+      border-radius: 8px;
+      padding: 12px;
+      border: 1px solid #ddd;
+      &:focus { border-color: #507f15; box-shadow: 0 0 0 0.2rem rgba(80, 127, 21, 0.15); }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 70vh;
+  }
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+}

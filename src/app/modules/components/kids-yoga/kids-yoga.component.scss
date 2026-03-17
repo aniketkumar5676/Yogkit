@@ -1,0 +1,973 @@
+// ===================================================
+// Kids Yoga Page - Playful yet Trustworthy Design
+// Color Palette follows existing site theme:
+// Primary: rgb(147, 75, 19) — warm brown
+// Accent: #E8927C — coral
+// Light BG: rgb(254, 248, 238) — cream
+// ===================================================
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700&display=swap');
+
+// Brand Colors
+$primary: rgb(147, 75, 19);
+$primary-light: rgba(147, 75, 19, 0.1);
+$coral: #E8927C;
+$cream: rgb(254, 248, 238);
+$deep-cream: #f5ece0;
+$white: #ffffff;
+$text-dark: #2d2d2d;
+$text-mid: #555;
+
+// Kids accent palette (complementary, not clashing with existing theme)
+$kids-teal: #2ecc8f;
+$kids-purple: #8b5cf6;
+$kids-yellow: #f59e0b;
+$kids-blue: #3b82f6;
+
+// Mixins
+@mixin card-base {
+    background: $white;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.14);
+    }
+}
+
+// ===== HERO SECTION =====
+.kids-hero {
+    background: linear-gradient(135deg, $cream 0%, #fff8f0 60%, #fef0e4 100%);
+    padding: 60px 0 80px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(232, 146, 124, 0.15) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -80px;
+        left: -80px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(147, 75, 19, 0.08) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+}
+
+.kids-hero-text {
+    padding-right: 2rem;
+
+    @media (max-width: 768px) {
+        text-align: center;
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+.kids-badge-tag {
+    display: inline-block;
+    background: $primary-light;
+    color: $primary;
+    border: 2px solid rgba(147, 75, 19, 0.3);
+    border-radius: 50px;
+    padding: 6px 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.kids-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    color: $text-dark;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.highlight-word {
+    color: $primary;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, $coral, $primary);
+        border-radius: 2px;
+    }
+}
+
+.kids-hero-subtitle {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.15rem;
+    color: $text-mid;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.kids-cta-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
+}
+
+.btn-kids-primary {
+    background: linear-gradient(135deg, $primary, darken($primary, 15%));
+    color: $white;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 24px rgba(147, 75, 19, 0.35);
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px rgba(147, 75, 19, 0.45);
+        color: $white;
+    }
+
+    &:disabled {
+        background: #ccc;
+        box-shadow: none;
+        transform: none;
+        cursor: not-allowed;
+    }
+}
+
+.btn-kids-secondary {
+    background: transparent;
+    color: $kids-teal;
+    border: 2.5px solid $kids-teal;
+    border-radius: 50px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+
+    i {
+        font-size: 1.2rem;
+    }
+
+    &:hover {
+        background: $kids-teal;
+        color: $white;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(46, 204, 143, 0.3);
+    }
+}
+
+.trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
+}
+
+.trust-badge {
+    background: $white;
+    border: 1.5px solid rgba(147, 75, 19, 0.2);
+    border-radius: 50px;
+    padding: 6px 16px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: $primary;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    i {
+        font-size: 0.75rem;
+    }
+}
+
+// Hero Image
+.kids-hero-image {
+    display: flex;
+    justify-content: flex-end;
+    /* Align right to avoid text overlap */
+    align-items: center;
+}
+
+.hero-img-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.kids-main-img {
+    max-width: 650px;
+    /* Kept large but controlled */
+    width: 100%;
+    border-radius: 32px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    display: block;
+    transform: translateX(5%);
+    /* Push slightly right out of the container to clear text */
+}
+
+.float-tag {
+    position: absolute;
+    background: $white;
+    border-radius: 50px;
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    white-space: nowrap;
+    animation: floatTag 3s ease-in-out infinite;
+
+    &.tag-1 {
+        top: 20px;
+        left: -50px;
+        /* Adjusted left for wider image */
+        color: $primary;
+        animation-delay: 0s;
+    }
+
+    &.tag-2 {
+        top: 50%;
+        right: -80px;
+        /* Adjusted right for wider image */
+        color: $kids-teal;
+        animation-delay: 1s;
+    }
+
+    &.tag-3 {
+        bottom: 30px;
+        left: -40px;
+        /* Adjusted left for wider image */
+        color: $kids-blue;
+        animation-delay: 2s;
+    }
+}
+
+@keyframes floatTag {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+// ===== SECTION COMMON =====
+.section-header {
+    margin-bottom: 1rem;
+}
+
+.section-tag {
+    display: inline-block;
+    background: $primary-light;
+    color: $primary;
+    border-radius: 50px;
+    padding: 5px 18px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+    font-family: 'Nunito', sans-serif;
+    color: $text-mid;
+    font-size: 1.05rem;
+}
+
+// ===== WHY YOGA SECTION =====
+.why-yoga-section {
+    background: $white;
+    padding: 80px 0;
+}
+
+.benefit-card {
+    @include card-base;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 2px solid transparent;
+    background: linear-gradient($white, $white) padding-box,
+        linear-gradient(135deg, rgba(147, 75, 19, 0.2), rgba(232, 146, 124, 0.2)) border-box;
+
+    &:hover {
+        border-color: transparent;
+        background: linear-gradient($cream, $cream) padding-box,
+            linear-gradient(135deg, $primary, $coral) border-box;
+    }
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    line-height: 1;
+}
+
+.benefit-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: $primary;
+    margin-bottom: 0.75rem;
+}
+
+.benefit-desc {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    color: $text-mid;
+    line-height: 1.6;
+    margin: 0;
+}
+
+// ===== JOURNEY SECTION =====
+.journey-section {
+    background: $cream;
+    padding: 80px 0;
+}
+
+.journey-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 54px; // center of icon
+        left: 10%;
+        width: 80%;
+        height: 3px;
+        background: linear-gradient(90deg, $primary, $coral);
+        border-radius: 2px;
+        z-index: 0;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+}
+
+.journey-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.journey-step-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $primary, $coral);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 24px rgba(147, 75, 19, 0.3);
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.journey-card {
+    @include card-base;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.step-number {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: $primary-light;
+    color: rgba(147, 75, 19, 0.15);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.step-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: $primary;
+    margin-bottom: 0.5rem;
+}
+
+.step-desc {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.88rem;
+    color: $text-mid;
+    margin: 0;
+    line-height: 1.5;
+}
+
+// ===== HIGHLIGHTS SECTION =====
+.highlights-section {
+    background: linear-gradient(135deg, $cream 0%, #fde8d8 100%);
+    /* Changed to light gradient */
+    padding: 80px 0;
+}
+
+.highlights-section .section-tag {
+    background: rgba(147, 75, 19, 0.1);
+    color: $primary;
+}
+
+.highlights-section .section-title {
+    color: $text-dark;
+    /* Changed to dark for readability on light bg */
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+}
+
+.highlights-section .highlight-word {
+    color: $primary;
+
+    &::after {
+        background: linear-gradient(90deg, $coral, $primary);
+    }
+}
+
+.highlights-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.highlight-item {
+    background: $white;
+    border: 3px solid transparent;
+    border-radius: 50px;
+    padding: 12px 24px;
+    /* Reduced padding slightly */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    animation: floatHighlight 5s ease-in-out infinite alternate;
+
+    @keyframes floatHighlight {
+        0% {
+            transform: translateY(0px);
+        }
+
+        100% {
+            transform: translateY(-6px);
+        }
+    }
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    /* Assigning dynamic borders based on index using CSS nth-child */
+    &:nth-child(1n) {
+        border-color: $kids-yellow;
+        animation-delay: 0s;
+    }
+
+    &:nth-child(2n) {
+        border-color: $kids-teal;
+        animation-delay: 1.2s;
+        margin-top: 15px;
+        /* Offset to break rigid grid */
+    }
+
+    &:nth-child(3n) {
+        border-color: $kids-blue;
+        animation-delay: 0.8s;
+    }
+
+    &:nth-child(4n) {
+        border-color: $coral;
+        animation-delay: 2.1s;
+        margin-top: 25px;
+    }
+
+    &:nth-child(5n) {
+        border-color: $kids-purple;
+        animation-delay: 0.4s;
+    }
+
+    &:hover {
+        transform: translateY(-8px) scale(1.05) rotate(2deg);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.highlight-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.highlight-icon {
+    font-size: 1.4rem;
+    /* Reduced from 1.8rem */
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.highlight-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    /* Reduced from 1.1rem */
+    font-weight: 800;
+    color: $primary;
+}
+
+// ===== COACH SECTION =====
+.coach-section {
+    background: $white;
+    padding: 80px 0;
+}
+
+.coach-card {
+    @include card-base;
+    overflow: hidden;
+    text-align: center;
+
+    .coach-avatar {
+        background: linear-gradient(135deg, $cream 0%, #fde8d8 100%);
+        padding: 2rem 2rem 0;
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 140px;
+            height: 180px;
+            object-fit: contain;
+        }
+    }
+
+    .coach-info {
+        padding: 1.5rem;
+    }
+}
+
+.coach-badge {
+    display: inline-block;
+    background: $primary-light;
+    color: $primary;
+    border-radius: 50px;
+    padding: 4px 14px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    margin-bottom: 0.75rem;
+}
+
+.coach-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: $primary;
+    margin-bottom: 0.25rem;
+}
+
+.coach-role {
+    font-family: 'Nunito', sans-serif;
+    color: $coral;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+}
+
+.coach-exp {
+    font-family: 'Nunito', sans-serif;
+    color: $text-mid;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+
+    i {
+        color: $kids-yellow;
+    }
+}
+
+.coach-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.coach-tag {
+    background: $cream;
+    border-radius: 50px;
+    padding: 4px 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    color: $primary;
+}
+
+// ===== VISUAL BENEFITS =====
+.visual-benefits-section {
+    background: $cream;
+    padding: 80px 0;
+}
+
+.visual-benefit-card {
+    @include card-base;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    border-radius: 28px;
+
+    &:hover {
+        transform: translateY(-8px) scale(1.02);
+    }
+}
+
+.vb-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.vb-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color: $text-dark;
+    margin: 0;
+}
+
+// ===== HOW TO JOIN =====
+.how-to-join-section {
+    background: $white;
+    padding: 80px 0;
+}
+
+.join-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.join-step {
+    @include card-base;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    max-width: 260px;
+    flex: 1;
+    position: relative;
+
+    h3 {
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.05rem;
+        font-weight: 800;
+        color: $primary;
+        margin: 0.75rem 0 0.5rem;
+    }
+
+    p {
+        font-family: 'Nunito', sans-serif;
+        font-size: 0.88rem;
+        color: $text-mid;
+        margin: 0;
+        line-height: 1.5;
+    }
+}
+
+.join-step-num {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, $primary, $coral);
+    color: $white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(147, 75, 19, 0.3);
+}
+
+.join-step-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.join-arrow {
+    font-size: 2rem;
+    color: rgba(147, 75, 19, 0.3);
+    font-weight: bold;
+
+    @media (max-width: 768px) {
+        transform: rotate(90deg);
+    }
+}
+
+.join-cta {
+    a {
+        text-decoration: none;
+    }
+}
+
+.btn-kids-outline {
+    background: transparent;
+    color: $primary;
+    border: 2.5px solid $primary;
+    border-radius: 50px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: $primary;
+        color: $white;
+        transform: translateY(-3px);
+    }
+}
+
+.phone-tag {
+    font-family: 'Nunito', sans-serif;
+    color: $text-mid;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    a {
+        color: $primary;
+        font-weight: 700;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// ===== FINAL CTA =====
+.final-cta-section {
+    background: linear-gradient(135deg, $cream 0%, #fde8d8 100%);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '🧘';
+        position: absolute;
+        top: 20px;
+        left: 5%;
+        font-size: 4rem;
+        opacity: 0.1;
+    }
+
+    &::after {
+        content: '🌟';
+        position: absolute;
+        bottom: 20px;
+        right: 5%;
+        font-size: 4rem;
+        opacity: 0.1;
+    }
+}
+
+.cta-cloud {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: floatTag 4s ease-in-out infinite;
+}
+
+.cta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: 1rem;
+}
+
+.highlight-word-light {
+    color: $primary;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, $coral, $primary);
+        border-radius: 2px;
+    }
+}
+
+.cta-subtitle {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.15rem;
+    color: $text-mid;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-cta-primary {
+    background: $kids-teal;
+    color: $white;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 36px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 28px rgba(46, 204, 143, 0.35);
+
+    i {
+        font-size: 1.3rem;
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(46, 204, 143, 0.45);
+    }
+}
+
+.btn-cta-secondary {
+    background: linear-gradient(135deg, $primary, darken($primary, 15%));
+    color: $white;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 36px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 28px rgba(147, 75, 19, 0.35);
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(147, 75, 19, 0.45);
+    }
+}
+
+// Responsive Adjustments
+@media (max-width: 991px) {
+    .kids-hero {
+        padding: 100px 0 60px;
+    }
+
+    .float-tag {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .journey-timeline {
+        grid-template-columns: 1fr;
+    }
+
+    .join-steps {
+        gap: 2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.min-vh-80 {
+    min-height: 80vh;
+}

@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AngularToastifyModule, ToastService } from 'angular-toastify'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularToastifyModule, ToastService } from 'angular-toastify';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeViewComponent } from './modules/components/home-view/home-view.component';
@@ -16,12 +19,15 @@ import { CorporateYogaComponent } from './modules/components/corporate-yoga/corp
 import { CallUsComponent } from './modules/components/call-us/call-us.component';
 import { OnlineYogaComponent } from './modules/components/online-yoga/online-yoga.component';
 import { ThreapyYogaComponent } from './modules/components/threapy-yoga/threapy-yoga.component';
-import { MeditationComponent } from './modules/components/meditation/meditation.component';
 import { AdvanceComponent } from './modules/components/advance-yoga/advance.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MeditationComponent } from './modules/components/meditation/meditation.component';
 import { SliderMenterComponent } from './modules/components/slider-menter/slider-menter.component';
 import { MentorsComponent } from './modules/components/mentors/mentors.component';
 import { YogaRetreatComponent } from './modules/components/yoga-retreat/yoga-retreat.component';
+import { YoutubeSchedulerComponent } from './modules/components/youtube-scheduler/youtube-scheduler.component';
+import { YogaWithPrinceComponent } from './modules/components/yoga-with-prince/yoga-with-prince.component';
+import { KidsYogaComponent } from './modules/components/kids-yoga/kids-yoga.component';
+import { YogaWellnessWorkshopComponent } from './modules/components/yoga-wellness-workshop/yoga-wellness-workshop.component';
 
 @NgModule({
   declarations: [
@@ -39,17 +45,22 @@ import { YogaRetreatComponent } from './modules/components/yoga-retreat/yoga-ret
     CallUsComponent,
     OnlineYogaComponent,
     ThreapyYogaComponent,
-    MeditationComponent,
     AdvanceComponent,
+    MeditationComponent,
     SliderMenterComponent,
     MentorsComponent,
-    YogaRetreatComponent   
+    YogaRetreatComponent,
+    YoutubeSchedulerComponent,
+    YogaWithPrinceComponent,
+    KidsYogaComponent,
+    YogaWellnessWorkshopComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AngularToastifyModule
   ],
   providers: [ToastService],

@@ -1,51 +1,198 @@
-<section id="carousel-section">
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <!--  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button> -->
-          <!--   <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" 
-                aria-label="Slide 2"></button> -->
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true"
-                aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-                aria-label="Slide 5"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
-                aria-label="Slide 6"></button>
-        </div>
-        <div class="carousel-inner">
-         <!--   <div class="carousel-item active" data-bs-interval="2000" (click)="navigate('corporate-yoga')">
-                <img src="/assets/image/Banner4.jpg" class="d-block w-100" alt="Slide 1" />
-            </div>-->
-           <!--  <div class="carousel-item active" id="corosel-yoga" data-bs-interval="2000" data-bs-toggle="modal" data-bs-target="#yogaOffer">
-                <img src="/assets/image/Banner5.jpg" class="d-block w-100" alt="Slide 2" />
-            </div> -->
-            <div class="carousel-item active"  id="corosel-home-yoga"  data-bs-interval="2000" data-bs-toggle="modal" data-bs-target="#yogaOfferHome">
-                <img src="/assets/image/Banner6.jpg" class="d-block w-100" alt="Slide 3" />
-            </div>
-            <div class="carousel-item"id="corosel-online-yoga"  data-bs-interval="2000" data-bs-toggle="modal" data-bs-target="#yogaOfferOnline">
-                <img src="/assets/image/Banner7.jpg" class="d-block w-100" alt="Slide 4" />
-            </div>
-            <div class="carousel-item" data-bs-interval="2000" (click)="navigate('threapy-yoga')">
-                <img src="/assets/image/Banner8.jpg" class="d-block w-100" alt="Slide 5" />
-            </div>
-            <div class="carousel-item" (click)="navigate('meditation')">
-                <img src="/assets/image/Banner9.jpg" class="d-block w-100" alt="Slide 6" />
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+<section class="hero-banner-carousel">
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-wrap="true"
+    data-bs-keyboard="true">
+    <!-- Carousel Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
     </div>
+
+    <!-- Carousel Inner -->
+    <div class="carousel-inner">
+      <!-- First Slide: FREE YOGA FOREVER -->
+      <div class="carousel-item active">
+        <div class="container-fluid">
+          <div class="row align-items-center hero-row" style="min-height: 70vh;">
+            <!-- Left: Text -->
+            <div class="col-lg-6 col-md-12 hero-text-col">
+              <div class="glass-card">
+                <h1 class="hero-title"
+                  style="color: var(--deep-brown); font-size: 3.2rem; font-weight: 900; margin-bottom: 1.5rem;">FREE
+                  YOGA FOREVER</h1>
+                <p class="hero-subtitle"
+                  style="font-size: 1.3rem; margin-bottom: 1.5rem; color: #333; font-weight: 600;">Join Yogkit & Start
+                  Your Transformation Journey</p>
+                <div class="founder-info" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 1rem;">
+                  <h4 style="color: var(--deep-brown); font-weight: 700; margin-bottom: 0.2rem;">Yogacharya Prince</h4>
+                  <p style="font-size: 0.9rem; margin-bottom: 0; color: #666;">CEO & Founder – YOGKIT<br>Masters in Yoga
+                    Science | 10+ Years Experience</p>
+                </div>
+              </div>
+            </div>
+            <!-- Right: Image -->
+            <div class="col-lg-6 col-md-12 hero-image-col">
+              <img src="/assets/image/prince-yogapic.svg" alt="Yoga Every Day" class="hero-img-on-bg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Slide: Yoga Wellness Workshop -->
+      <div class="carousel-item">
+        <div class="container-fluid">
+          <div class="row align-items-center hero-row" style="min-height: 70vh;">
+            <!-- Left: Text -->
+            <div class="col-lg-6 col-md-12 hero-text-col">
+              <div class="glass-card">
+                <h1 class="hero-title">Yoga Wellness Workshop</h1>
+                <p class="hero-subtitle">Free guided yoga workshops designed to improve health, reduce stress and build a healthier community for organizations and groups.</p>
+                <a class="hero-cta-btn" routerLink="/yoga-wellness-workshop">
+                  Request Free Workshop
+                </a>
+              </div>
+            </div>
+            <!-- Right: Image -->
+            <div class="col-lg-6 col-md-12 hero-image-col">
+              <img src="/assets/image/wellness-programs.png" alt="Yoga Wellness Workshop" class="hero-img-on-bg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Third Slide: Kids Yoga -->
+      <div class="carousel-item">
+        <div class="container-fluid">
+          <div class="row align-items-center hero-row" style="min-height: 70vh;">
+            <!-- Left: Text -->
+            <div class="col-lg-6 col-md-12 hero-text-col">
+              <div class="glass-card">
+                <h1 class="hero-title">Kids Yoga Program</h1>
+                <p class="hero-subtitle">A fun and safe yoga program designed specially for children to improve focus,
+                  flexibility and confidence. Build Strong & Confident Kids!</p>
+                <a class="hero-cta-btn" routerLink="/kids-yoga">
+                  Join the Adventure
+                </a>
+              </div>
+            </div>
+            <!-- Right: Image -->
+            <div class="col-lg-6 col-md-12 hero-image-col">
+              <img src="/assets/image/kids-yoga-collage.png" alt="Kids Yoga Program" class="hero-img-on-bg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fourth Slide: Yoga at Home -->
+      <div class="carousel-item">
+        <div class="container-fluid">
+          <div class="row align-items-center hero-row" style="min-height: 70vh;">
+            <!-- Left: Text -->
+            <div class="col-lg-6 col-md-12 hero-text-col">
+              <div class="glass-card">
+                <h1 class="hero-title">YOGA AT HOME</h1>
+                <p class="hero-subtitle">Transform your living space into a sanctuary of wellness. Practice yoga in the
+                  comfort of your home with expert guidance.</p>
+                <a class="hero-cta-btn" routerLink="/online-yoga">
+                  Start Your Home Practice
+                </a>
+              </div>
+            </div>
+            <!-- Right: Image -->
+            <div class="col-lg-6 col-md-12 hero-image-col">
+              <img src="/assets/image/home_girl_yoga.png" alt="Yoga at Home" class="hero-img-on-bg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fifth Slide: Online Yoga Session -->
+      <div class="carousel-item">
+        <div class="container-fluid">
+          <div class="row align-items-center hero-row" style="min-height: 70vh;">
+            <!-- Left: Text -->
+            <div class="col-lg-6 col-md-12 hero-text-col">
+              <div class="glass-card">
+                <h1 class="hero-title">Online Yoga Session</h1>
+                <p class="hero-subtitle">Experience ultimate convenience with YOGKIT's personalized Online Yoga
+                  sessions, led by professional trainers.</p>
+                <a class="hero-cta-btn" routerLink="/online-yoga">
+                  Explore Packages
+                </a>
+              </div>
+            </div>
+            <!-- Right: Image -->
+            <div class="col-lg-6 col-md-12 hero-image-col">
+              <img src="/assets/image/online-yoga-pro.png" alt="Online Yoga Session"
+                class="hero-img-on-bg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sixth Slide: Therapy Yoga -->
+      <div class="carousel-item">
+        <div class="container-fluid">
+          <div class="row align-items-center hero-row" style="min-height: 70vh;">
+            <!-- Left: Text -->
+            <div class="col-lg-6 col-md-12 hero-text-col">
+              <div class="glass-card">
+                <h1 class="hero-title">Therapy Yoga</h1>
+                <p class="hero-subtitle">Experience healing and transformation with YOGKIT's specialized Therapy Yoga
+                  sessions, led by clinical experts.</p>
+                <a class="hero-cta-btn" routerLink="/threapy-yoga">
+                  Begin Your Healing
+                </a>
+              </div>
+            </div>
+            <!-- Right: Image -->
+            <div class="col-lg-6 col-md-12 hero-image-col">
+              <img src="/assets/image/therapy-yoga-main.png" alt="Therapy Yoga" class="hero-img-on-bg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seventh Slide: Meditation -->
+      <div class="carousel-item">
+        <div class="container-fluid">
+          <div class="row align-items-center hero-row" style="min-height: 70vh;">
+            <!-- Left: Text -->
+            <div class="col-lg-6 col-md-12 hero-text-col">
+              <div class="glass-card">
+                <h1 class="hero-title">Meditation</h1>
+                <p class="hero-subtitle">Discover inner peace and mindfulness with YOGKIT's guided sessions, led by
+                  experienced masters.</p>
+                <a class="hero-cta-btn" routerLink="/meditation">
+                  Find Inner Peace
+                </a>
+              </div>
+            </div>
+            <!-- Right: Image -->
+            <div class="col-lg-6 col-md-12 hero-image-col">
+              <img src="/assets/image/Meditation.png" alt="Meditation" class="hero-img-on-bg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Carousel Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </section>
 
 <app-home-view-service></app-home-view-service>
-
-
-
