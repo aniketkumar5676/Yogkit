@@ -31,79 +31,18 @@ export class YogaRetreatComponent implements OnInit {
 
   priceINR = 45000
 
-  yogaType:string=''
-
   public bookingForm: FormGroup;
-
-  programmes: Programme[] = [
-    {
-      title: 'Color Therapy',
-      image: 'assets/image/color-therapy.jpg',
-      description: 'Balance body, mind & spirit using the vibrations of color.'
-    },
-    {
-      title: 'Shatkarma',
-      image: 'assets/image/shatkarma.jpg',
-      description: 'Six yogic detox techniques to cleanse and energize.'
-    },
-    {
-      title: 'Acupressure',
-      image: 'assets/image/acupressure.jpg',
-      description: 'Gentle point‑pressing to release stress and boost digestion.'
-    },
-    {
-      title: 'Meditation',
-      image: 'assets/image/meditation.jpg',
-      description: 'Deep‑calm practices for clarity, balance and inner peace.'
-    }
-  ];
-
-  schedule: DaySchedule[] = [
-    {
-      day: 1,
-      events: [
-        'Hawan & Introduction',
-        'Mantra Chanting',
-        'Yoga Session',
-        'Drawing',
-        'Tratak',
-        'Meditation'
-      ]
-    },
-    {
-      day: 2,
-      events: [
-        'Meditation at Brahma Muhurta',
-        'Sunrise Yoga Session',
-        'Natural Body Detox',
-        'Basti (Shatkarma)',
-        'Deep Relaxation with Yoga Nidra',
-        'Ganga Aarti'
-      ]
-    },
-    {
-      day: 3,
-      events: [
-        'Music Meditation',
-        'Pranayama',
-        'Color Therapy',
-        'Yoga Dance',
-        'Story telling',
-        'Closing Ceremony'
-      ]
-    }
-  ];
 
   constructor(private router: Router, private _toastService: ToastService, private fb: FormBuilder) {
     this.bookingForm = this.fb.group({
       CompanyName: [''],
       isd: ['+91'],
-      phoneNumber: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
+      phoneNumber: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
       email: ['', [Validators.required, Validators.email]],
       add1: new FormControl(''),
       add2: new FormControl(''),
       mode: ['Offline'],
-      name: ['', Validators.required]
+      name: ['', [Validators.required, Validators.minLength(3)]]
     });
   }
 

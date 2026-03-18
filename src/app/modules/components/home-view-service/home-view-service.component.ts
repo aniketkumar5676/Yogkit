@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { ToastService } from 'angular-toastify';
@@ -33,20 +33,20 @@ export class HomeViewServiceComponent implements OnInit{
       
       window.scrollTo(0,0);
       this.contactForm = new FormGroup({
-        name: new FormControl(''),
+        name: new FormControl('', [Validators.required, Validators.minLength(3)]),
         isd: new FormControl('+91'),
-        phoneNumber: new FormControl(''),
-        email: new FormControl(''),
+        phoneNumber: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
+        email: new FormControl('', [Validators.required, Validators.email]),
         add1: new FormControl(''),
         add2: new FormControl(''),
         message: new FormControl(''),
       });
 
       this.bookingForm = new FormGroup({
-        name: new FormControl(''),
+        name: new FormControl('', [Validators.required, Validators.minLength(3)]),
         isd: new FormControl('+91'),
-        phoneNumber: new FormControl(''),
-        email: new FormControl(''),
+        phoneNumber: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
+        email: new FormControl('', [Validators.required, Validators.email]),
         add1: new FormControl(''),
         add2: new FormControl(''),
         message: new FormControl(''),

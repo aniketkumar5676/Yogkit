@@ -1,0 +1,159 @@
+{
+  "banner": {
+    "title": "Begin the Transformation Journey",
+    "subtitle": "Yoga with Prince Yog Guru – Master of Yogic Science, Internationally Certified Trainer.",
+    "ctaButton": {
+      "text": "Join free yoga session"
+    }
+  },
+  "schedule": {
+    "title": "Daily Class Schedule",
+    "description": "Join interactive sessions with Prince Yog Guru",
+    "batches": {
+      "morning": {
+        "title": "🌅 Morning Batch",
+        "timings": [
+          {
+            "time": "6:00 AM",
+            "duration": "60 min",
+            "title": "Sunrise Yoga Flow",
+            "description": "Start your day with energizing sun salutations and breathing exercises",
+            "youtubeId": "dQw4w9WgXcQ",
+            "freeClass": true
+          },
+          {
+            "time": "7:00 AM",
+            "duration": "60 min",
+            "title": "Morning Power Yoga",
+            "description": "Build strength and flexibility with dynamic yoga sequences",
+            "youtubeId": "dQw4w9WgXcQ"
+          },
+          {
+            "time": "8:00 AM",
+            "duration": "60 min",
+            "title": "Gentle Morning Stretch",
+            "description": "Perfect for beginners - gentle stretching and relaxation",
+            "youtubeId": "dQw4w9WgXcQ"
+          }
+        ]
+      },
+      "evening": {
+        "title": "🌆 Evening Batch",
+        "timings": [
+          {
+            "time": "5:00 PM",
+            "duration": "60 min",
+            "title": "Evening Relaxation",
+            "description": "Wind down with gentle stretching and meditation",
+            "youtubeId": "dQw4w9WgXcQ"
+          },
+          {
+            "time": "6:00 PM",
+            "duration": "60 min",
+            "title": "Power Evening Flow",
+            "description": "Release stress and build energy for the evening",
+            "youtubeId": "dQw4w9WgXcQ"
+          },
+          {
+            "time": "7:00 PM",
+            "duration": "60 min",
+            "title": "Night Meditation",
+            "description": "Deep relaxation and mindfulness for peaceful sleep",
+            "youtubeId": "dQw4w9WgXcQ"
+          }
+        ]
+      }
+    }
+  },
+  "classInfo": {
+    "title": "📋 Class Information",
+    "details": [
+      {
+        "label": "Duration",
+        "value": "60 minutes per session"
+      },
+      {
+        "label": "Level",
+        "value": "All Levels Welcome"
+      },
+      {
+        "label": "Instructor",
+        "value": "Prince Yog Guru"
+      }
+    ]
+  },
+  "header": {
+    "title": "🎯 Live Yoga Studio",
+    "subtitle": "Join interactive sessions with Prince Yog Guru"
+  },
+  "currentClasses": [
+    {
+      "title": "Morning Yoga Flow",
+      "time": "07:00 AM",
+      "description": "Start your day with an energizing yoga session.",
+      "youtubeId": "dQw4w9WgXcQ"
+    }
+  ],
+  "modal": {
+    "title": "Join free yoga session",
+    "subtitle": "Transform your life with our comprehensive yoga program",
+    "form": {
+      "title": "Registration Form",
+      "fields": {
+        "name": {
+          "label": "Full Name",
+          "placeholder": "Enter your full name",
+          "required": true
+        },
+        "age": {
+          "label": "Age",
+          "placeholder": "Enter your age",
+          "required": true,
+          "min": 18,
+          "max": 100
+        },
+        "phoneNumber": {
+          "label": "WhatsApp Number",
+          "placeholder": "Enter your WhatsApp number",
+          "required": true
+        },
+        "alternativeNumber": {
+          "label": "Alternative Contact Number",
+          "placeholder": "Enter alternative number (optional)",
+          "required": false
+        },
+        "city": {
+          "label": "City",
+          "placeholder": "Enter your city",
+          "required": true
+        },
+        "purpose": {
+          "label": "Purpose",
+          "placeholder": "Tell us why you want to join (optional)",
+          "required": false
+        },
+        "preferredBatch": {
+          "label": "Preferred Batch",
+          "placeholder": "Select your preferred batch",
+          "required": true,
+          "options": [
+            "6:00 AM ",
+            "7:00 AM ",
+            "8:00 AM ",
+            "5:00 PM ",
+            "6:00 PM ",
+            "7:00 PM "
+          ]
+        }
+      }
+    },
+    "submitButton": {
+      "text": "Join Free Session",
+      "loadingText": "Joining..."
+    },
+    "successMessage": "Registration successful! We'll contact you shortly.",
+    "errorMessage": "Unable to process registration. Please try again.",
+    "autoShow": true,
+    "autoShowDelay": 1000
+  }
+}

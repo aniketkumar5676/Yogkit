@@ -10,4 +10,14 @@ export class MentorsComponent implements OnInit{
     window.scrollTo(0,0);
   }
 
+  scrollToMentors(): void {
+    const element = document.getElementById('mentors');
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
+
 }

@@ -2,47 +2,51 @@
 ## Page Header
 --------------------------------------------------------------*/
 .page-header {
-    width: 100%;
-    min-height: 350px;
-    color: #43baff;
-    font-weight: 500;
-  background: #ffffff center center no-repeat;
-    background-size: cover;
-  }
-  .page-header .page-title {
-    color: #121212;
-    margin-bottom: 0;
-    flex: 1;
-    padding: 10px 20px 10px 0;
-  }
-  .page-header .breadcrumbs {
-    margin-bottom: 0;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 800;
-  }
-  .page-header .breadcrumbs li {
-    display: inline-block;
-    color: #000000;
-  }
-  .page-header .breadcrumbs li:before {
-    content: "";
-    font-family: "FontAwesome";
-    font-size: 7px;
-    color: #43baff;
-    margin: -3px 8px 0;
-    display: inline-block;
-    vertical-align: middle;
-  }
-  .page-header .breadcrumbs li:first-child:before {
-    display: none;
-  }
-  .page-header .breadcrumbs li a {
-    color: #040404;
-  }
-  .page-header .breadcrumbs li a:hover {
-    color: #101010;
-  }
+  width: 100%;
+  min-height: 350px;
+  color: var(--primary-color);
+  font-weight: 500;
+  background: var(--primary-gradient);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.page-header .page-title {
+  color: #fff;
+  margin-bottom: 0;
+  flex: 1;
+  padding: 10px 20px 10px 0;
+}
+.page-header .breadcrumbs {
+  margin-bottom: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.page-header .breadcrumbs li {
+  display: inline-block;
+  color: #000000;
+}
+.page-header .breadcrumbs li:before {
+  content: "";
+  font-family: "FontAwesome";
+  font-size: 7px;
+  color: #43baff;
+  margin: -3px 8px 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+.page-header .breadcrumbs li:first-child:before {
+  display: none;
+}
+.page-header .breadcrumbs li a {
+  color: #040404;
+}
+.page-header .breadcrumbs li a:hover {
+  color: #101010;
+}
   
   @media (max-width: 992px) {
     .page-header .inner {
@@ -174,8 +178,8 @@
 margin-top: 50px;
 }
 .yoga-btn{
-    background: #f5a623;
-    color: white;
+    background: var(--primary-gradient) !important;
+    color: #2E2E2E !important;
     border: none;
     padding: 10px 40px;
     font-size: 1em;
@@ -217,4 +221,18 @@ margin-top: 10px;
     border-style: double;
     opacity: 0.4;
     border-color: #037b63;
+}
+.section-title h2 {
+  color: var(--text-accent);
+}
+.card-body {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+.coming-soon-banner {
+  background: var(--primary-gradient);
+  color: #fff;
+  border-radius: var(--banner-radius);
+  box-shadow: var(--banner-shadow);
 }

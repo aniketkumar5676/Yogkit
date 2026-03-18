@@ -1,22 +1,29 @@
-<div id="content" class="site-content">
-    <div class="page-header flex-middle">
-        <div class="container">
-            <div class="inner flex-middle">
-            <h1 class="page-title">Corporate Yoga</h1>
-        </div>
+<section class="hero-banner-static corporate-yoga-banner">
+  <div class="container-fluid">
+    <div class="row align-items-center hero-row" style="min-height: 60vh;">
+      <!-- Left: Text -->
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 hero-text-col">
+        <h1 class="hero-title">Corporate Yoga</h1>
+        <p class="hero-subtitle">Transform your workplace with YOGKIT's personalized Corporate Yoga sessions, led by our experienced and professional trainers</p>
+        <a (click)="scrollToPackages()" class="hero-cta-btn" style="cursor: pointer;">Explore Packages →</a>
+      </div>
+      <!-- Right: Image -->
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 hero-image-col position-relative d-flex align-items-center justify-content-center">
+        <img src="assets/image/CorporateYoga.png" alt="Corporate Yoga" class="hero-img-on-bg" />
+      </div>
     </div>
-</div>
+  </div>
+</section>
 
-<div class="mt-20"></div>
 <div class="space-20"></div>
 
-<section class="container">
+<div id="yoga-packages" class="container">
     <div class="text-line">
         Experience the ultimate in yoga convenience with YOGKIT 's personalized Corporate Yoga sessions, 
         <br>
         led by our experienced and professional trainers
     </div>
-</section>
+</div>
 
 <div class="space-20"></div>
 <div class="container">
@@ -25,17 +32,17 @@
             <section>
                 <div class="container">
                     <div class="misc-box fullstackbg1">
-                        <div class="ot-counter">
-                            <div>
-                                <span class="num" data-to="1000" data-time="2000">0</span>
-                                <span>+</span>
+                        <div class="content-section">
+                            <div class="ot-counter">
+                                <div>
+                                    <span class="num" data-to="1000" data-time="2000">0</span>
+                                    <span>+</span>
+                                </div>
                             </div>
+                            <h5>Silver Corporate Yoga</h5>
+                            <p>Yoga Class</p>
                         </div>
-                        <h5>Silver Corporate Yoga</h5>
-                        <p>Yoga Class</p>
-                        <div class="space-40"></div>
-                        <br>
-                        <br>
+                        <img src="assets/image/yoga-girls.png" alt="Corporate Yoga" class="yoga-illustration" />
                     </div>
                  </div>
             </section>
@@ -79,17 +86,17 @@
             <section>
                 <div class="container">
                     <div class="misc-box fullstackbg1">
-                        <div class="ot-counter">
-                            <div>
-                                <span class="num" data-to="1360" data-time="2000">0</span>
-                                <span>+</span>
+                        <div class="content-section">
+                            <div class="ot-counter">
+                                <div>
+                                    <span class="num" data-to="1360" data-time="2000">0</span>
+                                    <span>+</span>
+                                </div>
                             </div>
+                            <h5>Gold Corporate Yoga</h5>
+                            <p>Yoga Class</p>
                         </div>
-                        <h5>Gold Corporate Yoga</h5>
-                        <p>Yoga Class</p>
-                        <div class="space-40"></div>
-                        <br>
-                        <br>
+                        <img src="assets/image/yoga-girls.png" alt="Corporate Yoga" class="yoga-illustration" />
                     </div>
                  </div>
             </section>
@@ -131,17 +138,17 @@
             <section>
                 <div class="container">
                     <div class="misc-box fullstackbg1">
-                        <div class="ot-counter">
-                            <div>
-                                <span class="num" data-to="1460" data-time="2000">0</span>
-                                <span>+</span>
+                        <div class="content-section">
+                            <div class="ot-counter">
+                                <div>
+                                    <span class="num" data-to="1460" data-time="2000">0</span>
+                                    <span>+</span>
+                                </div>
                             </div>
+                            <h5>Platinum Corporate Yoga</h5>
+                            <p>Yoga Class</p>
                         </div>
-                        <h5>Platinum Corporate Yoga</h5>
-                        <p>Yoga Class</p>
-                        <div class="space-40"></div>
-                        <br>
-                        <br>
+                        <img src="assets/image/yoga-girls.png" alt="Corporate Yoga" class="yoga-illustration" />
                     </div>
                  </div>
             </section>
@@ -183,17 +190,17 @@
             <section>
                 <div class="container">
                     <div class="misc-box fullstackbg1">
-                        <div class="ot-counter">
-                            <div>
-                                <span class="num" data-to="1530" data-time="2000">0</span>
-                                <span>+</span>
+                        <div class="content-section">
+                            <div class="ot-counter">
+                                <div>
+                                    <span class="num" data-to="1530" data-time="2000">0</span>
+                                    <span>+</span>
+                                </div>
                             </div>
+                            <h5>Premium Corporate Yoga </h5>
+                            <p>Yoga Class</p>
                         </div>
-                        <h5>Premium Corporate Yoga </h5>
-                        <p>Yoga Class</p>
-                        <div class="space-40"></div>
-                        <br>
-                        <br>
+                        <img src="assets/image/yoga-girls.png" alt="Corporate Yoga" class="yoga-illustration" />
                     </div>
                  </div>
             </section>
@@ -240,10 +247,14 @@
         <div class="modal-body">
             <form id="corporate-yoga-form" class="row g-3" [formGroup]="bookingForm">
                 <div class="col-md-12">
-                    <input type="text" class="form-control" formControlName="CompanyName" id="CompanyName" placeholder="Organisation/Company Name" required>
+                    <input type="text" class="form-control" formControlName="CompanyName" id="CompanyName" placeholder="Company Name *" required>
+                    <div *ngIf="(bookingForm.get('CompanyName')?.touched || bookingForm.get('CompanyName')?.dirty) && bookingForm.get('CompanyName')?.invalid" class="text-danger small mt-1">
+                        <span *ngIf="bookingForm.get('CompanyName')?.errors?.['required']">Company name is required</span>
+                        <span *ngIf="bookingForm.get('CompanyName')?.errors?.['minlength']">Company name must be at least 3 characters</span>
+                    </div>
                 </div>
                 <div class="col-4">
-                    <select class="form-select" formControlName="isd" aria-label="multiple select example">
+                    <select class="form-select" formControlName="isd" aria-label="ISD Code">
                         <option value="+91" selected>+91</option>
                         <option value="+1">+1</option>
                         <option value="+44">+44</option>
@@ -271,35 +282,47 @@
                      </select>
                 </div>
                 <div class="col-8">
-                  <input type="number" class="form-control" formControlName="phoneNumber" id="inputPhone" placeholder="Whatsapp Phone Number" required>
+                  <input type="number" class="form-control" formControlName="phoneNumber" id="inputPhone" placeholder="Mobile / WhatsApp Number *" required>
+                  <div *ngIf="(bookingForm.get('phoneNumber')?.touched || bookingForm.get('phoneNumber')?.dirty) && bookingForm.get('phoneNumber')?.invalid" class="text-danger small mt-1">
+                      <span *ngIf="bookingForm.get('phoneNumber')?.errors?.['required']">Phone number is required</span>
+                      <span *ngIf="bookingForm.get('phoneNumber')?.errors?.['pattern']">Please enter a valid 10-digit number</span>
+                  </div>
                 </div>
                 <div class="col-md-12">
-                  <input type="email" class="form-control" formControlName="email" id="inputEmail4" placeholder="Email Address">
+                  <input type="email" class="form-control" formControlName="email" id="inputEmail4" placeholder="Email Address *" required>
+                  <div *ngIf="(bookingForm.get('email')?.touched || bookingForm.get('email')?.dirty) && bookingForm.get('email')?.invalid" class="text-danger small mt-1">
+                      <span *ngIf="bookingForm.get('email')?.errors?.['required']">Email is required</span>
+                      <span *ngIf="bookingForm.get('email')?.errors?.['email']">Please enter a valid email format (e.g. name@example.com)</span>
+                  </div>
                 </div>
                 <div class="col-12">
-                  <input type="text" class="form-control" formControlName="add1" id="inputAddress" placeholder="Office Address">
+                    <select class="form-select" formControlName="mode" aria-label="Select Mode">
+                        <option value="Offline" selected>Offline (At Office)</option>
+                        <option value="Online">Online Sessions</option>
+                     </select>
+                </div>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" formControlName="name" id="name" placeholder="Contact Person Name *" required>
+                    <div *ngIf="(bookingForm.get('name')?.touched || bookingForm.get('name')?.dirty) && bookingForm.get('name')?.invalid" class="text-danger small mt-1">
+                        <span *ngIf="bookingForm.get('name')?.errors?.['required']">Contact Name is required</span>
+                        <span *ngIf="bookingForm.get('name')?.errors?.['minlength']">Name must be at least 3 characters</span>
+                    </div>
                 </div>
                 <div class="col-12">
-                    <input type="text" class="form-control" formControlName="name" id="name" placeholder="Booking Person Name" required>
+                  <input type="text" class="form-control" formControlName="add1" id="inputAddress" placeholder="Office Address line 1">
                 </div>
                 <div class="col-12">
-                    <input type="text" disabled class="form-control" [value]="yogaType"  id="yogaCourse" required >
-                </div>    
-                <div class="col-2 align">
-                    Mode 
-                </div>
-                <div class="col-10">
-                  <select class="form-select" formControlName="mode" aria-label="multiple select example" required="">
-                     <option value="Offline" selected>Offline</option>
-                     <option value="Online">Online</option>                        
-                  </select> 
+                  <input type="text" class="form-control" formControlName="add2" id="inputAddress2" placeholder="Office Address line 2">
                 </div>
                 <div class="col-12">
-                    <textarea  type="text" class="form-control" formControlName="message" id="message" style="height: 100px" placeholder="Write your message" ></textarea>
+                    <textarea  type="text" class="form-control" formControlName="message" id="message" style="height: 80px" placeholder="Tell us about your requirements (Optional)"></textarea>
                 </div>
 
-                <div class="col-12">
-                  <button id="corporate-yoga-form-btn" [disabled]="!bookingForm.valid" type="submit" (click)="submit()" class="yoga-btn">Submit</button>
+                <div class="col-12 text-center mt-3">
+                  <div *ngIf="bookingForm.invalid && (bookingForm.touched || bookingForm.dirty)" class="text-muted small mb-2">
+                       Please enter company details and contact info to enable button.
+                  </div>
+                  <button id="corporate-form-btn" [disabled]="!bookingForm.valid" type="submit" (click)="submit()" class="yoga-btn">Book Corporate Session</button>
                 </div>
               </form>
         </div>

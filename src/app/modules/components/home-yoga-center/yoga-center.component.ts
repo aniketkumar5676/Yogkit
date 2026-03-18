@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { ToastService } from 'angular-toastify';
 
@@ -19,10 +19,10 @@ export class YogaCenterComponent implements OnInit {
   ngOnInit(): void {
     window.scrollTo(0,0);
     this.bookingForm = new FormGroup({
-      name: new FormControl(''),
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       isd: new FormControl('+91'),
-      phoneNumber: new FormControl(''),
-      email: new FormControl(''),
+      phoneNumber: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       add1: new FormControl(''),
       add2: new FormControl(''),
       message: new FormControl(''),
@@ -57,9 +57,13 @@ export class YogaCenterComponent implements OnInit {
         document.getElementById('close-modal')?.click()
         this._toastService.error('Unable to send Message');
       });;
+  }
 
-
-
+  scrollToPackages() {
+    const element = document.getElementById('yoga-packages');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }
 

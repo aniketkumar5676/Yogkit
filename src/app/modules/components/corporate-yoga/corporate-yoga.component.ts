@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { ToastService } from 'angular-toastify';
 
@@ -18,12 +18,12 @@ export class CorporateYogaComponent implements OnInit {
   ngOnInit(): void {
     window.scrollTo(0,0);
     this.bookingForm = new FormGroup({
-      CompanyName: new FormControl(''),
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       isd: new FormControl('+91'),
-      phoneNumber: new FormControl(''),
-      email: new FormControl(''),
-      mode: new FormControl('Offline'),
-      name: new FormControl(''),
+      phoneNumber: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      CompanyName: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      mode: new FormControl('Offline', Validators.required),
       add1: new FormControl(''),
       add2: new FormControl(''),
       message: new FormControl(''),
@@ -58,7 +58,12 @@ export class CorporateYogaComponent implements OnInit {
         document.getElementById('close-modal')?.click()
         this._toastService.error('Unable to send Message');
       });;
+  }
 
-    
+  scrollToPackages() {
+    const element = document.getElementById('yoga-packages');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }

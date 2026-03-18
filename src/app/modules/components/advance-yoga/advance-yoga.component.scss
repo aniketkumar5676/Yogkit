@@ -1,0 +1,332 @@
+.site-content {
+  background: #FFFFFF;
+}
+
+.page-header {
+  background: rgb(254, 248, 238);
+  padding: 80px 0;
+  text-align: center;
+
+  .page-title {
+    font-family: 'Playfair Display', serif;
+    color: rgb(147, 75, 19);
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+    
+    .page-title {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.space-20 {
+  height: 20px;
+}
+
+.container {
+  padding: 80px 0;
+
+  .text-line {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 3rem;
+  }
+
+  .row {
+    margin-bottom: 3rem;
+  }
+
+  .misc-box {
+    background: rgb(254, 248, 238);
+    border: none;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .ot-counter {
+      margin-bottom: 1rem;
+
+      .num {
+        font-family: 'Playfair Display', serif;
+        color: rgb(147, 75, 19);
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+
+      span {
+        color: rgb(147, 75, 19);
+        font-size: 2rem;
+        font-weight: 700;
+      }
+    }
+
+    h5 {
+      font-family: 'Playfair Display', serif;
+      color: rgb(147, 75, 19);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: #000000;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+  }
+
+  .right-about-v4 {
+    background: #FFFFFF;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+    .ot-heading {
+      margin-bottom: 1rem;
+
+      .main-heading {
+        font-family: 'Playfair Display', serif;
+        color: rgb(147, 75, 19);
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+    }
+
+    p {
+      color: #000000;
+      font-size: 1rem;
+      line-height: 1.6;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+
+      b {
+        color: rgb(147, 75, 19);
+        font-weight: 700;
+      }
+    }
+
+    .dis {
+      color: rgb(147, 75, 19);
+      font-weight: 600;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .table {
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      overflow: hidden;
+
+      thead {
+        background: rgb(147, 75, 19);
+        color: #FFFFFF;
+
+        th {
+          border: none;
+          padding: 1rem;
+          font-weight: 600;
+        }
+      }
+
+      tbody {
+        tr {
+          td {
+            border: none;
+            padding: 1rem;
+            color: #000000;
+            background: rgb(254, 248, 238);
+          }
+        }
+      }
+    }
+
+    .yoga-btn {
+      background: rgb(147, 75, 19);
+      color: #FFFFFF;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+
+      &:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(147, 75, 19, 0.2);
+      }
+
+      &:disabled {
+        background: rgba(147, 75, 19, 0.5);
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+
+    .text-line {
+      font-size: 1.1rem;
+    }
+
+    .misc-box {
+      margin-bottom: 2rem;
+    }
+
+    .right-about-v4 {
+      padding: 1.5rem;
+
+      .ot-heading {
+        .main-heading {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(147, 75, 19, 0.2);
+  margin: 3rem 0;
+}
+
+// Modal Styles
+.modal {
+  .modal-dialog {
+    max-width: 500px;
+  }
+
+  .modal-content {
+    background: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .modal-header {
+    border: none;
+    padding: 1.5rem 1.5rem 0.5rem;
+    background: none;
+
+    .modal-title {
+      font-family: 'Playfair Display', serif;
+      color: rgb(147, 75, 19);
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
+      width: 100%;
+    }
+
+    .btn-close {
+      position: absolute;
+      right: 1.5rem;
+      top: 1.5rem;
+      opacity: 0.6;
+      transition: all 0.3s ease;
+
+      &:hover {
+        opacity: 1;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+
+    .form-control, .form-select {
+      height: 48px;
+      background: rgb(254, 248, 238);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      color: #000000;
+      transition: all 0.3s ease;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.4);
+      }
+
+      &:focus {
+        border-color: rgb(147, 75, 19);
+        box-shadow: 0 0 0 2px rgba(147, 75, 19, 0.1);
+      }
+    }
+
+    textarea.form-control {
+      height: auto;
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .yoga-btn {
+      width: 100%;
+      background: rgb(147, 75, 19);
+      color: #FFFFFF;
+      border: none;
+      padding: 0.75rem;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+
+      &:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(147, 75, 19, 0.2);
+      }
+
+      &:disabled {
+        background: rgba(147, 75, 19, 0.5);
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .modal-dialog {
+      margin: 1rem;
+    }
+
+    .modal-header {
+      padding: 1rem 1rem 0.5rem;
+
+      .modal-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    .modal-body {
+      padding: 1rem;
+    }
+  }
+} 

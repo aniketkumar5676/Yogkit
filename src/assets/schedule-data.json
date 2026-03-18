@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Morning Yoga Flow",
+    "date": "2024-07-10",
+    "time": "07:00 AM",
+    "description": "Start your day with an energizing yoga session.",
+    "youtubeId": "hyTIIZ9MCsM",
+    "youtubeUrl": "https://www.youtube.com/watch?v=hyTIIZ9MCsM"
+  },
+  {
+    "title": "Evening Relaxation",
+    "date": "2024-07-11",
+    "time": "08:00 PM",
+    "description": "Wind down with gentle stretches and meditation.",
+    "youtubeId": "eY52Zsg-KVI",
+    "youtubeUrl": "https://youtube.com/live/eY52Zsg-KVI"
+  },
+  {
+    "title": "Weekend Power Yoga",
+    "date": "2024-07-13",
+    "time": "09:00 AM",
+    "description": "Boost your energy with a dynamic power yoga class.",
+    "youtubeId": "3JZ_D3ELwOQ",
+    "youtubeUrl": "https://youtube.com/live/3JZ_D3ELwOQ"
+  }
+] 

@@ -1,58 +1,59 @@
 <nav class="navbar navbar-expand-lg bg-light fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img title="logo" src="/assets/image/logo.png" width="180px"/>
-        <a class="tel-no" href="tel:+917217638088"><i class="fa fa-phone my-float"></i> +917217638088</a>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active desktop"  routerLink="" aria-current="page" >Home</a>
-            <a class="nav-link active mobile"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="" aria-current="page" >Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Yoga Session
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item desktop" routerLink="home-yoga">Home Yoga </a></li>
-              <li><a class="dropdown-item mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="home-yoga">Home Yoga </a></li>
-
-              <li><a class="dropdown-item desktop" routerLink="corporate-yoga">Corporate Yoga </a></li>
-              <li><a class="dropdown-item mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="corporate-yoga">Corporate Yoga </a></li>
-
-              <li><a class="dropdown-item desktop" routerLink="online-yoga">Online Yoga </a></li>
-              <li><a class="dropdown-item mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="online-yoga">Online Yoga </a></li>
-                            
-              <li><a class="dropdown-item desktop" routerLink="threapy-yoga">Yoga Therapy </a></li>
-              <li><a class="dropdown-item mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="threapy-yoga">Yoga Therapy </a></li>
-
-              <li><a class="dropdown-item desktop" routerLink="meditation">Meditation </a></li>
-              <li><a class="dropdown-item mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="meditation">Meditation </a></li>
-              <!-- <li><a class="dropdown-item"  (click)="navigate('advance-yoga')">Advance Yoga </a></li>--> 
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link desktop" routerLink="mentors">Mentors</a>
-            <a class="nav-link mobile"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="mentors">Mentors</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link desktop" routerLink="/yogaretreat/rishiskesh-retreat">Yoga Retreats</a>
-            <a class="nav-link mobile"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="/yogaretreat/rishiskesh-retreat">Yoga Retreats</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link desktop" routerLink="about">About</a>
-            <a class="nav-link mobile"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link desktop"  routerLink="contact">Contact</a>
-            <a class="nav-link mobile"   data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" routerLink="contact">Contact</a>
-          </li>
-
-        </ul>
-      </div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img title="logo" src="/assets/image/logo.png" width="180px" />
+      <a class="tel-no" href="tel:+917217638088"><i class="fa fa-phone my-float"></i> +917217638088</a>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+            (click)="closeMobileMenu()">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Yoga Session
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="home-yoga" routerLinkActive="active"
+                (click)="closeMobileMenu()">Home Yoga</a></li>
+            <li><a class="dropdown-item" routerLink="corporate-yoga" routerLinkActive="active"
+                (click)="closeMobileMenu()">Corporate Yoga</a></li>
+            <li><a class="dropdown-item" routerLink="online-yoga" routerLinkActive="active"
+                (click)="closeMobileMenu()">Online Yoga</a></li>
+            <li><a class="dropdown-item" routerLink="threapy-yoga" routerLinkActive="active"
+                (click)="closeMobileMenu()">Yoga Therapy</a></li>
+            <li><a class="dropdown-item" routerLink="meditation" routerLinkActive="active"
+                (click)="closeMobileMenu()">Meditation</a></li>
+            <li><a class="dropdown-item" routerLink="kids-yoga" routerLinkActive="active"
+                (click)="closeMobileMenu()">Kids Yoga</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="yoga-wellness-workshop" routerLinkActive="active" (click)="closeMobileMenu()">Wellness Workshop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="mentors" routerLinkActive="active" (click)="closeMobileMenu()">Mentors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/yogaretreat/rishiskesh-retreat" routerLinkActive="active"
+            (click)="closeMobileMenu()">Yoga Retreats</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="about" routerLinkActive="active" (click)="closeMobileMenu()">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/schedule" routerLinkActive="active" (click)="closeMobileMenu()">Join Live
+            Class</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="contact" routerLinkActive="active" (click)="closeMobileMenu()">Contact</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>

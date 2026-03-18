@@ -1,120 +1,201 @@
-<div class="hero">
-    <div class="hero__overlay">
-      <h1>Yoga & Natural Detox Retreat in Rishikesh</h1>
-      <p>Recharge Your Soul Amidst the Himalayas</p>
-      <button type="button"(click)="updateForm('Yoga Retreat')" class="btn" data-bs-toggle="modal" data-bs-target="#yogaRetreatModal" >Start Your Detox Journey</button>
-    </div>
+<section class="hero-section">
+  <div class="hero-content">
+    <h1>Yoga & Natural Detox Retreat in Rishikesh</h1>
+    <p>Recharge Your Soul Amidst the Himalayas</p>
+    <button type="button" (click)="updateForm('Yoga Retreat')" class="btn-primary-retreat" data-bs-toggle="modal"
+      data-bs-target="#yogaRetreatModal">Start Your Detox Journey</button>
   </div>
+</section>
 
-  <section class="dates-section">
-    <h2>Dates</h2>
-    <div class="coming-soon">2nd May - 4th May 2025</div>
-  </section>
-  
-  <section class="programmes">
-    <h2>Our Signature Programmes</h2>
-    <div class="grid">
-      <div class="card" *ngFor="let p of programmes">
-        <img [src]="p.image" [alt]="p.title">
-        <h3>{{ p.title }}</h3>
-        <p>{{ p.description }}</p>
-      </div>
+<div class="main-content-wrapper">
+
+  <section class="section-dates">
+    <div class="container text-center">
+      <h2>Dates</h2>
+      <div class="date-box">2nd May - 4th May 2025</div>
     </div>
   </section>
-  
-  <section class="schedule">
-    <h2>Retreat Schedule</h2>
-    <div class="grid-schedule">
-      <div class="schedule-card" *ngFor="let d of schedule">
-        <div class="day-circle">{{ d.day }}</div>
-        <h3>Day {{ d.day }}</h3>
-        <ul>
-          <li *ngFor="let e of d.events">{{ e }}</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  
-  <!-- <section class="pricing">
-    <h2>Pricing</h2>
-    <p>7 Days / 6 Nights – All Inclusive</p>
-    <p class="price">INR 45,000</p>
-    <p class="note">* Includes accommodation, meals, sessions, and excursions</p>
-  </section> -->
-  
-  <div class="cta">
-    <button type="button"(click)="updateForm('Yoga Retreat')" class="btn" data-bs-toggle="modal" data-bs-target="#yogaRetreatModal" >Start Your Detox Journey</button>
-  </div>
 
-  <div class="modal fade" id="yogaRetreatModal" tabindex="-1" aria-labelledby="yogaRetreatModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="yogaRetreatModalLabel">Book Now</h1>
-          <button type="button" id="close-modal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <section class="section-programmes">
+    <div class="container">
+      <h2 class="section-heading text-center">Our Signature Programmes</h2>
+      <div class="program-grid">
+        <div class="program-card">
+          <div class="icon-wrapper">
+            <img src="https://www.yogkit.com/assets/image/color-therapy.jpg" alt="Color Therapy">
+          </div>
+          <h3>Color Therapy</h3>
+          <p>Balance body, mind & spirit using the vibrations of color.</p>
         </div>
-        <div class="modal-body">
-            <form  id="yoga-retreat-form" class="row g-3" [formGroup]="bookingForm">
-                <div class="col-md-12">
-                    <input type="text" class="form-control" formControlName="name" id="name" placeholder="Name" required>
-                </div>
-                <div class="col-4">
-                    <select class="form-select" formControlName="isd" aria-label="multiple select example">
-                        <option value="+91" selected>+91</option>
-                        <option value="+1">+1</option>
-                        <option value="+44">+44</option>
-                        <option value="+61">+61</option>
-                        <option value="+81">+81</option>
-                        <option value="+49">+49</option>
-                        <option value="+86">+86</option>
-                        <option value="+33">+33</option>
-                        <option value="+39">+39</option>
-                        <option value="+7">+7</option>
-                        <option value="+34">+34</option>
-                        <option value="+55">+55</option>
-                        <option value="+27">+27</option>
-                        <option value="+82">+82</option>
-                        <option value="+46">+46</option>
-                        <option value="+41">+41</option>
-                        <option value="+31">+31</option>
-                        <option value="+32">+32</option>
-                        <option value="+47">+47</option>
-                        <option value="+48">+48</option>
-                        <option value="+351">+351</option>
-                        <option value="+20">+20</option>
-                        <option value="+62">+62</option>
-                        <option value="+92">+92</option>
-                     </select>
-                </div>
-                <div class="col-8">
-                  <input type="number" class="form-control" formControlName="phoneNumber" id="inputPhone" placeholder="Whatsapp Phone Number" required>
-                  <div *ngIf="phoneNumber?.invalid && (phoneNumber?.dirty || phoneNumber?.touched)" class="text-danger mt-1">
-                    <small *ngIf="phoneNumber?.errors?.['required']">Phone number is required.</small>
-                    <small *ngIf="phoneNumber?.errors?.['pattern']">Phone number must be exactly 10 digits.</small>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <input type="email" class="form-control" formControlName="email" id="inputEmail4" placeholder="Email Address" >
-                  <div *ngIf="bookingForm.get('email')?.invalid && (bookingForm.get('email')?.touched || bookingForm.get('email')?.dirty)" class="text-danger mt-1">
-                    <small *ngIf="bookingForm.get('email')?.errors?.['required']">Email is required.</small>
-                    <small *ngIf="bookingForm.get('email')?.errors?.['email']">Enter a valid email address.</small>
-                  </div>
-                </div>
-                <div class="col-12">
-                    <input type="text" class="form-control" formControlName="add1" id="inputAddress" placeholder="Address line 1" >
-                  </div>
-                  <div class="col-12">
-                    <input type="text" class="form-control" formControlName="add2" id="inputAddress2" placeholder="Address line 2" >
-                  </div>
-                <div class="col-12">
-                    <input type="text" disabled class="form-control" [value]="yogaType"  id="yogaCourse" required >
-                </div>
-                <div class="col-12">
-                  <button id="yoga-retreat-form-btn" [disabled]="!bookingForm.valid" type="submit" (click)="submit()" class="yoga-btn">Submit</button>
-                </div>
-              </form>
+        <div class="program-card">
+          <div class="icon-wrapper">
+            <img src="https://www.yogkit.com/assets/image/shatkarma.jpg" alt="Shatkarma">
+          </div>
+          <h3>Shatkarma</h3>
+          <p>Six yogic detox techniques to cleanse and energize.</p>
+        </div>
+        <div class="program-card">
+          <div class="icon-wrapper">
+            <img src="https://www.yogkit.com/assets/image/acupressure.jpg" alt="Acupressure">
+          </div>
+          <h3>Acupressure</h3>
+          <p>Gentle point-pressing to release stress and boost digestion.</p>
+        </div>
+        <div class="program-card">
+          <div class="icon-wrapper">
+            <img src="https://www.yogkit.com/assets/image/meditation.jpg" alt="Meditation">
+          </div>
+          <h3>Meditation</h3>
+          <p>Deep-calm practices for clarity, balance and inner peace.</p>
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="section-schedule">
+    <div class="container">
+      <h2 class="section-heading text-center">Retreat Schedule</h2>
+      <div class="schedule-grid">
+        <div class="schedule-card">
+          <div class="day-badge">1</div>
+          <h3>Day 1</h3>
+          <div class="schedule-list">
+            <div class="schedule-item">
+              <span class="item-icon">🔥</span>
+              <span class="item-text">Hawan & Introduction</span>
+            </div>
+            <div class="schedule-item">
+              <span class="item-icon">📿</span>
+              <span class="item-text">Mantra Chanting</span>
+            </div>
+            <div class="schedule-item">
+              <span class="item-icon">🧘‍♂️</span>
+              <span class="item-text">Yoga Session</span>
+            </div>
+            <div class="schedule-item">
+              <span class="item-icon">🎨</span>
+              <span class="item-text">Drawing</span>
+            </div>
+            <div class="schedule-item">
+              <span class="item-icon">🕯️</span>
+              <span class="item-text">Tratak</span>
+            </div>
+            <div class="schedule-item">
+              <span class="item-icon">✨</span>
+              <span class="item-text">Meditation</span>
+            </div>
+          </div>
+        </div>
+        <div class="schedule-card">
+          <div class="day-badge">2</div>
+          <h3>Day 2</h3>
+          <div class="schedule-list">
+            <div class="schedule-item">
+              <span class="item-icon">🌅</span>
+              <span class="item-text">Meditation at Brahma Muhurta</span>
+            </div>
+            <div class="schedule-item">
+              <span class="item-icon">☀️</span>
+              <span class="item-text">Sunrise Yoga Session</span>
+            </div>
+            <div class="schedule-item">
+              <span class="item-icon">🌿</span>
+              <span class="item-text">Natural Body Detox</span>
+            </div>
+            <div class="schedule-item">
+              <span class="item-icon">🌊</span>
+              <span class="item-text">Basti (Shatkarma)</span>
+            </div>
+            <div class="schedule-item">
+              <span class="item-icon">🛌</span>
+              <span class="item-text">Deep Relaxation with Yoga Nidra</span>
+            </div>
+            <div class="schedule-item">
+              <span class="item-icon">🕯️</span>
+              <span class="item-text">Ganga Aarti</span>
+            </div>
+          </div>
+        </div>
+        <div class="schedule-card">
+          <div class="day-badge">3</div>
+          <h3>Day 3</h3>
+          <div class="schedule-list">
+            <div class="schedule-item">
+              <span class="item-icon">🎵</span>
+              <span class="item-text">Music Meditation</span>
+            </div>
+            <div class="schedule-item">
+              <span class="item-icon">🌬️</span>
+              <span class="item-text">Pranayama</span>
+            </div>
+            <div class="schedule-item">
+              <span class="item-icon">🎨</span>
+              <span class="item-text">Color Therapy</span>
+            </div>
+            <div class="schedule-item">
+              <span class="item-icon">💃</span>
+              <span class="item-text">Yoga Dance</span>
+            </div>
+            <div class="schedule-item">
+              <span class="item-icon">📖</span>
+              <span class="item-text">Story telling</span>
+            </div>
+            <div class="schedule-item">
+              <span class="item-icon">🎆</span>
+              <span class="item-text">Closing Ceremony</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-footer-wrap text-center">
+    <button type="button" (click)="updateForm('Yoga Retreat')" class="btn-primary-retreat" data-bs-toggle="modal"
+      data-bs-target="#yogaRetreatModal">Start Your Detox Journey</button>
+  </div>
+
 </div>
-  
+
+<!-- Booking Modal (Preserved & Styled) -->
+<div class="modal fade" id="yogaRetreatModal" tabindex="-1" aria-labelledby="yogaRetreatModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="yogaRetreatModalLabel">Book Your Retreat</h1>
+        <button type="button" id="close-modal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="yoga-retreat-form" class="row g-3" [formGroup]="bookingForm">
+          <div class="col-md-12">
+            <input type="text" class="form-control" formControlName="name" id="name" placeholder="Your Full Name *"
+              required>
+          </div>
+          <div class="col-4">
+            <select class="form-select" formControlName="isd">
+              <option value="+91" selected>+91</option>
+              <option value="+1">+1</option>
+              <option value="+44">+44</option>
+            </select>
+          </div>
+          <div class="col-8">
+            <input type="number" class="form-control" formControlName="phoneNumber" id="inputPhone"
+              placeholder="WhatsApp Number *" required>
+          </div>
+          <div class="col-md-12">
+            <input type="email" class="form-control" formControlName="email" id="inputEmail4"
+              placeholder="Email Address *" required>
+          </div>
+          <div class="col-12">
+            <input type="text" disabled class="form-control bg-light" [value]="'Package: Rishikesh Retreat'"
+              id="yogaCourse">
+          </div>
+          <div class="col-12 text-center mt-3">
+            <button id="yoga-retreat-form-btn" [disabled]="!bookingForm.valid" type="submit" (click)="submit()"
+              class="btn-primary-retreat border-0 w-100">Reserve Your Spot</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

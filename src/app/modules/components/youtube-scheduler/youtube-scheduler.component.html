@@ -1,0 +1,315 @@
+<div class="studio-dashboard-wrapper">
+  <!-- Premium Studio Hero Section -->
+  <header class="studio-hero">
+    <div class="hero-blur-overlay"></div>
+    <div class="container-fluid px-lg-5">
+      <div class="hero-content-flex">
+        <div class="hero-title-group">
+          <div class="studio-badge">LIVE STUDIO</div>
+          <h1 class="studio-main-title">{{ config?.header?.title || 'Elevate Your Practice' }}</h1>
+          <p class="studio-tagline">{{ config?.header?.subtitle || 'Join Prince Yog Guru in our interactive virtual
+            classroom for real-time guidance.' }}</p>
+        </div>
+        <div class="hero-stats-group desktop-only">
+          <div class="stat-item">
+            <span class="stat-number">Live</span>
+            <span class="stat-label">Daily Sessions</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">Expert</span>
+            <span class="stat-label">Certified Guidance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="studio-main-grid container-fluid px-lg-5">
+    <!-- Left Column: Dashboard Content -->
+    <div class="studio-content-area">
+
+      <!-- Featured Session Card (Google Meet) -->
+      <section class="featured-session-section animate-up">
+        <div class="featured-card glass-card">
+          <div class="featured-body">
+            <div class="featured-info">
+              <div class="status-chip-v2">
+                <span class="pulse-dot"></span>
+                ACTIVE CLASSROOM
+              </div>
+              <h2 class="featured-title">Interactive <span>Live Session</span></h2>
+              <p class="featured-desc">Get personalized feedback and posture corrections directly from Prince Yog Guru
+                via Google Meet.</p>
+
+              <div class="action-row">
+                <button class="primary-studio-btn" (click)="showModal()">
+                  Register For Free
+                  <i class="arrow-icon">→</i>
+                </button>
+                <div class="youtube-status-v2">
+                  <span class="status-dot"></span>
+                  YouTube Live Coming Soon
+                </div>
+              </div>
+            </div>
+            <div class="featured-visual">
+              <img src="/assets/image/prince_meditation_1.jpg" alt="Prince Yog Guru" class="instructor-preview">
+              <div class="visual-accent"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Schedule Timeline Section -->
+      <section class="schedule-timeline-section animate-up-delayed">
+        <div class="section-title-row">
+          <h3 class="dashboard-section-title">Session Timeline</h3>
+          <div class="timezone-info">Local Time: GMT +5:30</div>
+        </div>
+
+        <div class="timeline-tabs">
+          <!-- Morning Batch -->
+          <div class="timeline-block" *ngIf="config?.schedule?.batches?.morning">
+            <div class="batch-header">
+              <span class="batch-icon">🌅</span>
+              <h4>{{ config.schedule.batches.morning.title }}</h4>
+            </div>
+            <div class="timeline-grid">
+              <div class="timeline-card" *ngFor="let timing of config.schedule.batches.morning.timings">
+                <div class="card-time">{{ timing.time }}</div>
+                <div class="card-details">
+                  <div class="detail-row">
+                    <span class="session-name">General Yoga Session</span>
+                    <span class="free-badge-v2" *ngIf="timing.freeClass">FREE</span>
+                  </div>
+                  <div class="detail-meta">
+                    <span>⏱️ {{ timing.duration }}</span>
+                    <span>📍 Virtual Studio 1</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Evening Batch -->
+          <div class="timeline-block mt-5" *ngIf="config?.schedule?.batches?.evening">
+            <div class="batch-header">
+              <span class="batch-icon">🌙</span>
+              <h4>{{ config.schedule.batches.evening.title }}</h4>
+            </div>
+            <div class="timeline-grid">
+              <div class="timeline-card" *ngFor="let timing of config.schedule.batches.evening.timings">
+                <div class="card-time">{{ timing.time }}</div>
+                <div class="card-details">
+                  <div class="detail-row">
+                    <span class="session-name">Relaxation & Therapy</span>
+                  </div>
+                  <div class="detail-meta">
+                    <span>⏱️ {{ timing.duration }}</span>
+                    <span>📍 Virtual Studio 2</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Right Column: Sidebar -->
+    <aside class="studio-sidebar">
+      <!-- Mentor Profile -->
+      <div class="sidebar-card profile-card glass-card animate-right">
+        <div class="profile-header">
+          <img src="/assets/image/prince-yogapic.svg" alt="Prince Yog Guru" class="sidebar-avatar">
+          <div class="profile-meta">
+            <h4>Yogacharya Prince</h4>
+            <span class="title">CEO & Founder, Yogkit</span>
+          </div>
+        </div>
+        <p class="profile-bio">Masters in Yoga Science with over 10 years of experience in therapeutic and traditional
+          yoga.</p>
+        <div class="profile-tags">
+          <span>Masters in Yoga</span>
+          <span>10+ Years Exp</span>
+        </div>
+      </div>
+
+      <!-- Quick Tips / Information -->
+      <div class="sidebar-card info-card glass-card animate-right-delayed" *ngIf="config?.classInfo">
+        <h4 class="card-title">{{ config.classInfo.title }}</h4>
+        <div class="simple-list">
+          <div class="list-item" *ngFor="let detail of config.classInfo.details">
+            <span class="label">{{ detail.label }}</span>
+            <span class="value">{{ detail.value }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Support Card -->
+      <div class="sidebar-card help-card animate-right-delayed">
+        <h4>Need Assistance?</h4>
+        <p>Contact our support team for help with Google Meet or registration issues.</p>
+        <a routerLink="/contact" class="support-link">Get Help →</a>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<!-- Feedback Modal -->
+<div class="feedback-modal" *ngIf="showFeedback" (click)="closeFeedback()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h3>How was your class?</h3>
+      <button class="close-btn" (click)="closeFeedback()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="rating-stars">
+        <span class="star" *ngFor="let star of [1,2,3,4,5]" (click)="rateClass(star)"
+          [class.active]="star <= rating">⭐</span>
+      </div>
+      <textarea placeholder="Share your experience..." [(ngModel)]="feedbackText" class="feedback-textarea"></textarea>
+      <button class="submit-feedback" (click)="submitFeedback()">Submit Feedback</button>
+    </div>
+  </div>
+</div>
+
+<!-- Free Yoga Session Modal -->
+<div class="modal fade" id="freeYogaModal" tabindex="-1" aria-labelledby="freeYogaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="freeYogaModalLabel">{{ config?.modal?.title || 'Join Free Yoga Session' }}</h1>
+        <button type="button" id="close-modal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="config?.modal?.subtitle" class="modal-subtitle mb-3">
+          <h6 class="text-muted">{{ config.modal.subtitle }}</h6>
+        </div>
+        <div *ngIf="config?.modal?.description" class="modal-description mb-4">
+          <p class="text-muted">{{ config.modal.description }}</p>
+        </div>
+
+        <form id="free-yoga-form" class="row g-3" [formGroup]="bookingForm">
+          <!-- Name Field -->
+          <div class="col-md-12">
+            <label for="name" class="form-label">Full Name *</label>
+            <input type="text" class="form-control" formControlName="name" id="name" placeholder="Your full name">
+            <div
+              *ngIf="(bookingForm.get('name')?.touched || bookingForm.get('name')?.dirty) && bookingForm.get('name')?.invalid"
+              class="text-danger small mt-1">
+              <span *ngIf="bookingForm.get('name')?.errors?.['required']">Full name is required</span>
+              <span *ngIf="bookingForm.get('name')?.errors?.['minlength']">Name must be at least 3 characters</span>
+            </div>
+          </div>
+
+          <!-- Age Field -->
+          <div class="col-md-12">
+            <label for="age" class="form-label">Age *</label>
+            <input type="number" class="form-control" formControlName="age" id="age" placeholder="Enter your age">
+            <div
+              *ngIf="(bookingForm.get('age')?.touched || bookingForm.get('age')?.dirty) && bookingForm.get('age')?.invalid"
+              class="text-danger small mt-1">
+              <span *ngIf="bookingForm.get('age')?.errors?.['required']">Age is required</span>
+              <span *ngIf="bookingForm.get('age')?.errors?.['min']">Age must be at least 18 years</span>
+              <span *ngIf="bookingForm.get('age')?.errors?.['max']">Age must not exceed 100 years</span>
+            </div>
+          </div>
+
+          <!-- WhatsApp Number -->
+          <div class="col-4">
+            <label class="form-label">Code *</label>
+            <select class="form-select" formControlName="isd">
+              <option value="+91" selected>+91</option>
+              <option value="+1">+1</option>
+              <option value="+44">+44</option>
+              <option value="+61">+61</option>
+              <option value="+81">+81</option>
+            </select>
+          </div>
+          <div class="col-8">
+            <label for="inputPhone" class="form-label">WhatsApp Number *</label>
+            <input type="number" class="form-control" formControlName="phoneNumber" id="inputPhone"
+              placeholder="10-digit number">
+            <div
+              *ngIf="(bookingForm.get('phoneNumber')?.touched || bookingForm.get('phoneNumber')?.dirty) && bookingForm.get('phoneNumber')?.invalid"
+              class="text-danger small mt-1">
+              <span *ngIf="bookingForm.get('phoneNumber')?.errors?.['required']">WhatsApp number is required</span>
+              <span *ngIf="bookingForm.get('phoneNumber')?.errors?.['pattern']">Please enter a valid 10-digit
+                number</span>
+            </div>
+          </div>
+
+          <!-- Alternative Number (Optional) -->
+          <div class="col-12" *ngIf="config?.modal?.form?.fields?.alternativeNumber">
+            <label for="alternativeNumber" class="form-label">{{ config.modal.form.fields.alternativeNumber.label
+              }}</label>
+            <input type="number" class="form-control" formControlName="alternativeNumber" id="alternativeNumber"
+              [placeholder]="config.modal.form.fields.alternativeNumber.placeholder">
+            <div
+              *ngIf="(bookingForm.get('alternativeNumber')?.touched || bookingForm.get('alternativeNumber')?.dirty) && bookingForm.get('alternativeNumber')?.invalid"
+              class="text-danger small mt-1">
+              <span *ngIf="bookingForm.get('alternativeNumber')?.errors?.['pattern']">Please enter a valid 10-digit
+                number</span>
+            </div>
+          </div>
+
+          <!-- City -->
+          <div class="col-12">
+            <label for="city" class="form-label">City *</label>
+            <input type="text" class="form-control" formControlName="city" id="city" placeholder="Your city">
+            <div
+              *ngIf="(bookingForm.get('city')?.touched || bookingForm.get('city')?.dirty) && bookingForm.get('city')?.invalid"
+              class="text-danger small mt-1">
+              <span *ngIf="bookingForm.get('city')?.errors?.['required']">City is required</span>
+            </div>
+          </div>
+
+          <!-- Purpose (Optional) -->
+          <div class="col-12" *ngIf="config?.modal?.form?.fields?.purpose">
+            <label for="purpose" class="form-label">{{ config.modal.form.fields.purpose.label }}</label>
+            <textarea class="form-control" formControlName="purpose" id="purpose" style="height: 80px"
+              [placeholder]="config.modal.form.fields.purpose.placeholder"></textarea>
+          </div>
+
+          <!-- Preferred Batch -->
+          <div class="col-12">
+            <label class="form-label">Preferred Batch Time *</label>
+            <div class="time-slots" *ngIf="config?.modal?.form?.fields?.preferredBatch?.options">
+              <div class="form-check" *ngFor="let option of config.modal.form.fields.preferredBatch.options">
+                <input class="form-check-input" type="radio" [id]="'batch_' + option" [value]="option"
+                  formControlName="preferredBatch">
+                <label class="form-check-label" [for]="'batch_' + option">{{option}}</label>
+              </div>
+            </div>
+            <div class="time-slots" *ngIf="!config?.modal?.form?.fields?.preferredBatch?.options">
+              <div class="form-check" *ngFor="let slot of timeSlots">
+                <input class="form-check-input" type="radio" [id]="'batch_' + slot" [value]="slot"
+                  formControlName="preferredBatch">
+                <label class="form-check-label" [for]="'batch_' + slot">{{slot}}</label>
+              </div>
+            </div>
+            <div
+              *ngIf="(bookingForm.get('preferredBatch')?.touched || bookingForm.get('preferredBatch')?.dirty) && bookingForm.get('preferredBatch')?.invalid"
+              class="text-danger small mt-1">
+              <span *ngIf="bookingForm.get('preferredBatch')?.errors?.['required']">Please select a preferred
+                batch</span>
+            </div>
+          </div>
+
+          <div class="col-12 text-center mt-3">
+            <div *ngIf="bookingForm.invalid && (bookingForm.touched || bookingForm.dirty)"
+              class="text-muted small mb-2">
+              Please fill all required fields correctly to join.
+            </div>
+            <button id="free-yoga-form-btn" type="submit" (click)="submit()" class="yoga-btn border-0 py-2 px-4 w-100"
+              [disabled]="!bookingForm.valid">
+              {{ config?.modal?.submitButton?.text || 'Join Free Session' }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

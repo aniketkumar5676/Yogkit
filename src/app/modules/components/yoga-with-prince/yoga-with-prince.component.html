@@ -1,0 +1,115 @@
+<!-- Banner Section (Reused from home-view) -->
+<section class="hero-banner-static">
+  <div class="container-fluid">
+    <div class="row align-items-center hero-row" style="min-height: 60vh;">
+      <!-- Left: Text -->
+      <div class="col-lg-6 col-md-6 col-sm-12 col-12 hero-text-col">
+        <h1 class="hero-title">{{ config?.banner?.title || 'Begin the Transformation Journey' }}</h1>
+        <p class="hero-subtitle">{{ config?.banner?.subtitle || 'Yoga with Prince Yog Guru – Master of Yogic Science,
+          Internationally Certified Trainer.' }}</p>
+        <a class="hero-cta-btn" routerLink="/schedule">
+          {{ config?.banner?.ctaButton?.text || 'Join free yoga session' }}
+        </a>
+      </div>
+      <!-- Right: Image -->
+      <div
+        class="col-lg-6 col-md-6 col-sm-12 col-12 hero-image-col position-relative d-flex align-items-center justify-content-center">
+        <img src="/assets/image/prince-yogapic.svg" alt="Yoga Every Day" class="hero-img-on-bg" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Schedule Section -->
+<section class="schedule-section py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="section-title">{{ config?.schedule?.title || 'Daily Class Schedule' }}</h2>
+        <p class="section-subtitle">{{ config?.schedule?.description || 'Join interactive sessions with Prince Yog Guru'
+          }}</p>
+      </div>
+    </div>
+
+    <!-- Morning Batch -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <h3 class="batch-title">{{ config?.schedule?.batches?.morning?.title || '🌅 Morning Batch' }}</h3>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4" *ngFor="let session of config?.schedule?.batches?.morning?.timings">
+            <div class="schedule-card">
+              <div class="time-badge">{{ session.time }}</div>
+              <h4 class="session-title">{{ session.title }}</h4>
+              <p class="session-duration">{{ session.duration }}</p>
+              <p class="session-description">{{ session.description }}</p>
+              <div class="youtube-embed" *ngIf="session.youtubeId">
+                <iframe width="100%" height="200" [src]="'https://www.youtube.com/embed/' + session.youtubeId"
+                  frameborder="0" allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Evening Batch -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <h3 class="batch-title">{{ config?.schedule?.batches?.evening?.title || '🌆 Evening Batch' }}</h3>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4" *ngFor="let session of config?.schedule?.batches?.evening?.timings">
+            <div class="schedule-card">
+              <div class="time-badge">{{ session.time }}</div>
+              <h4 class="session-title">{{ session.title }}</h4>
+              <p class="session-duration">{{ session.duration }}</p>
+              <p class="session-description">{{ session.description }}</p>
+              <div class="youtube-embed" *ngIf="session.youtubeId">
+                <iframe width="100%" height="200" [src]="'https://www.youtube.com/embed/' + session.youtubeId"
+                  frameborder="0" allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Class Information -->
+    <div class="row">
+      <div class="col-12">
+        <div class="class-info-card">
+          <h3 class="info-title">{{ config?.classInfo?.title || '📋 Class Information' }}</h3>
+          <div class="row">
+            <div class="col-md-4 mb-3" *ngFor="let detail of config?.classInfo?.details">
+              <div class="info-item">
+                <strong>{{ detail.label }}:</strong>
+                <span>{{ detail.value }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WhatsApp Enquiry Section -->
+<section class="whatsapp-section py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Have Questions?</h2>
+        <p class="section-subtitle">Get in touch with us on WhatsApp for instant support</p>
+        <a href="https://api.whatsapp.com/send/?phone=7217638088&text=I%20saw%20your%20yoga🧘‍♀️%20class%20on%20yogkit.com&type=phone_number&app_absent=0"
+          class="whatsapp-btn" target="_blank">
+          <i class="fa fa-whatsapp"></i>
+          Chat with Prince Yog Guru
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Floating WhatsApp Button -->
+<app-whatsapp></app-whatsapp>
