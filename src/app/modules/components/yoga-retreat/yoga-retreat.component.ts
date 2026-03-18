@@ -28,7 +28,7 @@ interface DaySchedule {
 
 
 export class YogaRetreatComponent implements OnInit {
-
+  public yogaType: string = '';
   priceINR = 45000
 
   public bookingForm: FormGroup;
