@@ -77,6 +77,9 @@ $white: #ffffff;
         border-radius: 50%;
         pointer-events: none;
     }
+    @media (max-width: 480px) {
+        padding-top: 150px; // Increased to 150px to account for taller fixed navbar on small screens
+    }
 }
 
 .wellness-hero-text {

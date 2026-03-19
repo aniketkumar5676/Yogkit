@@ -234,6 +234,19 @@
 
     .misc-box {
       margin-bottom: 1rem; // Reduced from 2rem
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+      padding: 1.5rem;
+
+      .content-section {
+        text-align: center;
+      }
+
+      .yoga-illustration {
+        width: 150px;
+        height: 150px;
+      }
     }
 
     .right-about-v4 {
@@ -480,7 +493,7 @@
 
   @media (max-width: 480px) {
     min-height: 45vh;
-    padding: 100px 0 50px 0; // Increased from 50px 0 to account for navbar height
+    padding: 150px 0 50px 0; // Increased to 150px to account for taller fixed navbar on small screens
     
     .hero-text-col {
       padding-left: 1.5rem;
