@@ -67,6 +67,10 @@ $kids-blue: #3b82f6;
         border-radius: 50%;
         pointer-events: none;
     }
+  @media (max-width: 480px) {
+    padding-top: 150px; // Increased to 150px to account for taller fixed navbar on small screens
+    min-height: 50vh;
+  }
 }
 
 .kids-hero-text {
@@ -248,6 +252,10 @@ $kids-blue: #3b82f6;
     display: block;
     transform: translateX(5%);
     /* Push slightly right out of the container to clear text */
+
+    @media (max-width: 991px) {
+        transform: none;
+    }
 }
 
 .float-tag {
