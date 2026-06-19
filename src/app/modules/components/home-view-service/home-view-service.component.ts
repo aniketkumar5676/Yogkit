@@ -28,7 +28,7 @@ export class HomeViewServiceComponent implements OnInit{
     ngOnInit(): void {      
       const timeDifference = this.targetDate.getTime() - this.currentDate.getTime();
       if (timeDifference > 0) {
-        this.title='Book Free Yoga Camp'
+        this.title='Book  Yoga Camp'
        }
       
       window.scrollTo(0,0);
